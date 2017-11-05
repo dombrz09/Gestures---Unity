@@ -27,7 +27,8 @@ public class DrawLine : MonoBehaviour
     private Vector3 mousePos_s;
     private Vector3 mousePos_e;
 
-    float speed = 100f;
+    private float speed = 100f;
+    private const float scale = 0.2f;
 
     //tablica z kolorami
     public Material[] line_color;
@@ -48,6 +49,27 @@ public class DrawLine : MonoBehaviour
             begin = GameObject.CreatePrimitive(PrimitiveType.Sphere);
             end = GameObject.CreatePrimitive(PrimitiveType.Sphere);
 
+            //Ustawienie skali
+            begin.transform.localScale = new Vector3(scale, scale, scale);
+            end.transform.localScale = new Vector3(scale, scale, scale);
+            
+            //Przygotowanie do rysowania 3D
+            Plane objPlane = new Plane(Camera.main.transform.forward *= speed * Time.deltaTime, this.transform.position);
+            Ray mRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+            float rayDistance;
+            if (objPlane.Raycast(mRay, out rayDistance))
+
+             //Zmiana koloru wraz ze sprawdzeniem by nie wychodzić po za zakres tablicy
+                if (Input.GetMouseButtonDown(0))
+            {
+                mousePos_e = mRay.GetPoint(rayDistance);
+
+                if (index < line_color.Length - 1 )
+                    index++;
+                else
+                    index = 0;
+            }
+
             //Ustawienie koloru
             MeshRenderer beginRenderer = begin.GetComponent<MeshRenderer>();
             MeshRenderer endRenderer = end.GetComponent<MeshRenderer>();
@@ -58,28 +80,9 @@ public class DrawLine : MonoBehaviour
             beginRenderer.sharedMaterial = line_color[index];
             endRenderer.sharedMaterial = line_color[index];
 
-            //Zmiana koloru wraz ze sprawdzeniem by nie wychodzić po za zakres tablicy
-            if (Input.GetMouseButtonDown(0))
-            {
-                if (index < line_color.Length - 1 )
-                    index++;
-                else
-                    index = 0;
-            }
-
-            //Ustawienie skali
-            begin.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
-            end.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
-
-            //Przygotowanie do rysowania 3D
-            Plane objPlane = new Plane(Camera.main.transform.forward *= speed * Time.deltaTime, this.transform.position);
-            Ray mRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-            float rayDistance;
-            if(objPlane.Raycast(mRay, out rayDistance))
-           
             //Pobieramy pozycję myszki
-            mousePos_s = mRay.GetPoint(rayDistance);
-            mousePos_e = Vector3.Lerp(transform.position, mousePos_s, speed * Time.deltaTime);
+            mousePos_s = mousePos_e;
+            mousePos_e = mRay.GetPoint(rayDistance);
 
             //Ustalamy pozycję dla kulek
             begin.transform.position = mousePos_s;
@@ -118,7 +121,9 @@ public class DrawLine : MonoBehaviour
 
         //Dostosowujemy skalę
         Vector3 localScale = cylinder.transform.localScale;
+        localScale.x = scale;
+        localScale.y = scale;
         localScale.z = (endPoint - beginPoint).magnitude;
-        cylinder.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+        cylinder.transform.localScale = localScale;
     }
 }
