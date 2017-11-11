@@ -5,9 +5,9 @@
 //Description:  Rysowanie lini 3D
 /////////////////////////////////////////////////
 //                  CHANGE                      
-//Author:
-//Date:
-//Description:
+//Author:       Piotr Arent
+//Date:         2017-11-11
+//Description:  Naprawa buga który powodował zmiane pozycji kamery podczas rozpoczęcia rysowania
 /////////////////////////////////////////////////
 
 using UnityEngine;
@@ -54,13 +54,13 @@ public class DrawLine : MonoBehaviour
             end.transform.localScale = new Vector3(scale, scale, scale);
             
             //Przygotowanie do rysowania 3D
-            Plane objPlane = new Plane(Camera.main.transform.forward *= speed * Time.deltaTime, this.transform.position);
+            Plane objPlane = new Plane(Camera.main.transform.forward, this.transform.position);
             Ray mRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             float rayDistance;
             if (objPlane.Raycast(mRay, out rayDistance))
 
              //Zmiana koloru wraz ze sprawdzeniem by nie wychodzić po za zakres tablicy
-                if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0))
             {
                 mousePos_e = mRay.GetPoint(rayDistance);
 
