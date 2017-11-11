@@ -2,7 +2,7 @@
 //                  CREATE                      
 //Author:       Dominika Brzozowska
 //Date:         2017-10-22
-//Description:  Rotate object in 3D
+//Description:  Obracanie obiektu
 /////////////////////////////////////////////////
 //                  CHANGE                      
 //Author:
@@ -16,26 +16,33 @@ using UnityEngine;
 public class RotateTarget : MonoBehaviour
 {
     //Cube (target)
-    public GameObject target = null;
+    public GameObject target;
+
 
     //Speed
-    float mouseSpeed = 20;
+    private float speed = 100f;
 
-    // Use this for initialization
-    void Start(){}
+    void Start() { }
 
-    // Rotate target
     void Update()
     {
-        //Check right mouse button click and target
-       if(Input.GetMouseButtonDown(1) && target != null) 
-            moveCamera();      
+
+        //Sprawdzenie czy prawy przycisk myszy jest wciśniety
+        if (((Input.touchCount > 0 && Input.GetTouch(1).phase == TouchPhase.Began) || Input.GetMouseButton(1)) && target != null)
+            moveCamera();
     }
 
 
-    //Calculate rotation
+    //procedura sprawdzająca, która opcja obrotu ma zostać wykonana
     void moveCamera()
     {
-        transform.RotateAround(target.transform.position, Vector3.up, Time.deltaTime * 20);
+        if (Input.GetAxis("Mouse X") > 0f) //kierunek : prawo
+            transform.RotateAround(target.transform.position, Vector3.up, Time.deltaTime * speed);
+        if (Input.GetAxis("Mouse X") < 0f) //kierunek : lewo
+            transform.RotateAround(target.transform.position, Vector3.down, Time.deltaTime * speed);
+        if (Input.GetAxis("Mouse Y") > 0f) //kierunek : góra
+            transform.RotateAround(target.transform.position, Vector3.left, Time.deltaTime * speed);
+        if (Input.GetAxis("Mouse Y") < 0f) //kierunek : dół
+            transform.RotateAround(target.transform.position, Vector3.right, Time.deltaTime * speed);
     }
 }
