@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Assets",
+    "\\Assets\\Gems Ultimate Pack",
+    "\\Assets\\Gems Ultimate Pack\\Scripts"
   ],
-  "SelectedNode": "\\Assembly-CSharp.csproj",
+  "SelectedNode": "\\Assets\\Gems Ultimate Pack\\Scripts\\AnimationScript.cs",
   "PreviewInSolutionExplorer": false
 }
