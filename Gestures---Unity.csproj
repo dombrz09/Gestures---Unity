@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{07F0E4B6-B860-BD42-4E55-9F11C0477BB7}</ProjectGuid>
+    <ProjectGuid>{3719D168-471D-226A-C1C1-714F2C917DD6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp.dll</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ChangeScene.cs" />
+    <Compile Include="Assets\CheckIfActive.cs" />
     <Compile Include="Assets\DrawLine.cs" />
     <Compile Include="Assets\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
     <Compile Include="Assets\MeshObject.cs" />

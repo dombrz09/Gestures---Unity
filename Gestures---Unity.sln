@@ -1,9 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestures---Unity", "Gestures---Unity.csproj", "{07F0E4B6-B860-BD42-4E55-9F11C0477BB7}"
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestures---Unity", "Gestures---Unity.csproj", "{3719D168-471D-226A-C1C1-714F2C917DD6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +9,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{07F0E4B6-B860-BD42-4E55-9F11C0477BB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{07F0E4B6-B860-BD42-4E55-9F11C0477BB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{07F0E4B6-B860-BD42-4E55-9F11C0477BB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{07F0E4B6-B860-BD42-4E55-9F11C0477BB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3719D168-471D-226A-C1C1-714F2C917DD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3719D168-471D-226A-C1C1-714F2C917DD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3719D168-471D-226A-C1C1-714F2C917DD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3719D168-471D-226A-C1C1-714F2C917DD6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D69920C4-3789-4FA9-BDAE-A34E755AD591}
 	EndGlobalSection
 EndGlobal
