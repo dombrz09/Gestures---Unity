@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 12
-  productGUID: 454c8b7d2a392b0429a8914608afa9a2
+  productGUID: 4a5648651f17bae449839fd408599440
   AndroidProfiler: 0
   defaultScreenOrientation: 4
   targetDevice: 2
@@ -368,6 +368,9 @@ PlayerSettings:
   switchUdpSendBufferSize: 9
   switchUdpReceiveBufferSize: 42
   switchSocketBufferEfficiency: 4
+  switchSocketInitializeEnabled: 1
+  switchNetworkInterfaceManagerInitializeEnabled: 1
+  switchPlayerConnectionEnabled: 1
   ps4NPAgeRating: 12
   ps4NPTitleSecret: 
   ps4NPTrophyPackPath: 
@@ -587,9 +590,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 5ad7820f-0c23-4414-a30b-d0ee95e92e29
+  cloudProjectId: 713ec7ea-beae-4dcf-94f3-a417d3a105d3
   projectName: Gestures
-  organizationId: domib
+  organizationId: jaruzel
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
