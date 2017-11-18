@@ -51,9 +51,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\ChangeScene.cs" />
      <Compile Include="Assets\DrawLine.cs" />
      <Compile Include="Assets\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
+     <Compile Include="Assets\Kinect\KinectView\Scripts\BodySourceManager.cs" />
+     <Compile Include="Assets\Kinect\KinectView\Scripts\BodySourceView.cs" />
+     <Compile Include="Assets\Kinect\KinectView\Scripts\ColorSourceManager.cs" />
+     <Compile Include="Assets\Kinect\KinectView\Scripts\ColorSourceView.cs" />
+     <Compile Include="Assets\Kinect\KinectView\Scripts\DepthSourceManager.cs" />
+     <Compile Include="Assets\Kinect\KinectView\Scripts\DepthSourceView.cs" />
+     <Compile Include="Assets\Kinect\KinectView\Scripts\DisableOnStart.cs" />
+     <Compile Include="Assets\Kinect\KinectView\Scripts\InfraredSourceManager.cs" />
+     <Compile Include="Assets\Kinect\KinectView\Scripts\InfraredSourceView.cs" />
+     <Compile Include="Assets\Kinect\KinectView\Scripts\MultiSourceManager.cs" />
+     <Compile Include="Assets\KinectUIModule\Scripts\KinectInputModule.cs" />
+     <Compile Include="Assets\KinectUIModule\Scripts\KinectUI\AbstractKinectUICursor.cs" />
+     <Compile Include="Assets\KinectUIModule\Scripts\KinectUI\KinectUICursor.cs" />
+     <Compile Include="Assets\KinectUIModule\Scripts\KinectUI\KinectUIWaitCursor.cs" />
+     <Compile Include="Assets\KinectUIModule\Scripts\KinectUI\KinectUIWaitOverButton.cs" />
+     <Compile Include="Assets\MeshObject.cs" />
+     <Compile Include="Assets\ObjImporter.cs" />
      <Compile Include="Assets\RotateTarget.cs" />
+     <Compile Include="Assets\Scripts\ButtonTest.cs" />
+     <Compile Include="Assets\Scripts\CaptureScreenShot.cs" />
+     <Compile Include="Assets\Scripts\EmojiRotator.cs" />
+     <Compile Include="Assets\Scripts\FollowMouse.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -75,6 +97,10 @@
  <Reference Include="UnityEngine.HoloLens">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{8AD9DDE4-9C41-9B39-7693-E6ED1727BDBD}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
