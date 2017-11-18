@@ -100,7 +100,6 @@ public class DrawLine : MonoBehaviour
     {
         //Inicjalizujemy obiekt cylinder
         cylinder = Instantiate<GameObject>(cylinderPrefab.gameObject, Vector3.zero, Quaternion.identity);
-   
     }
 
     private void UpdateCylinderPosition(GameObject cylinder, Vector3 beginPoint, Vector3 endPoint, Material material)
