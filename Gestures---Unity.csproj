@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.1.0p5</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -78,6 +76,12 @@
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms">
+      <HintPath>Assets/StandaloneFileBrowser/Plugins/System.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Ookii.Dialogs">
+      <HintPath>Assets/StandaloneFileBrowser/Plugins/Ookii.Dialogs.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Gestures---Unity.Plugins.csproj">
@@ -99,11 +103,22 @@
     <Compile Include="Assets\KinectView\Scripts\InfraredSourceManager.cs" />
     <Compile Include="Assets\KinectView\Scripts\InfraredSourceView.cs" />
     <Compile Include="Assets\KinectView\Scripts\MultiSourceManager.cs" />
+    <Compile Include="Assets\Load3dObject.cs" />
     <Compile Include="Assets\MeshObject.cs" />
     <Compile Include="Assets\ObjImporter.cs" />
     <Compile Include="Assets\RotateTarget.cs" />
     <Compile Include="Assets\Scripts\DetectJointsLeft.cs" />
     <Compile Include="Assets\Scripts\DetectJointsRight.cs" />
+    <Compile Include="Assets\StandaloneFileBrowser\IStandaloneFileBrowser.cs" />
+    <Compile Include="Assets\StandaloneFileBrowser\Sample\BasicSample.cs" />
+    <Compile Include="Assets\StandaloneFileBrowser\Sample\CanvasSampleOpenFileImage.cs" />
+    <Compile Include="Assets\StandaloneFileBrowser\Sample\CanvasSampleOpenFileText.cs" />
+    <Compile Include="Assets\StandaloneFileBrowser\Sample\CanvasSampleSaveFileImage.cs" />
+    <Compile Include="Assets\StandaloneFileBrowser\Sample\CanvasSampleSaveFileText.cs" />
+    <Compile Include="Assets\StandaloneFileBrowser\StandaloneFileBrowser.cs" />
+    <Compile Include="Assets\StandaloneFileBrowser\StandaloneFileBrowserEditor.cs" />
+    <Compile Include="Assets\StandaloneFileBrowser\StandaloneFileBrowserMac.cs" />
+    <Compile Include="Assets\StandaloneFileBrowser\StandaloneFileBrowserWindows.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
