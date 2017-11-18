@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -374,8 +374,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\rLorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel
-    diam enim. Vivamus scelerisque rutrum tristique. Praesent a finibus nibh."
+  m_Text: "U\u017Cywanie kontrolera jako myszki. Pozwala sterowa\u0107 komputerem
+    tak samo jak by\u015Bmy robili to za pomoc\u0105 myszki."
 --- !u!222 &201731714
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -956,6 +956,20 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -1623,8 +1637,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\rLorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel
-    diam enim. Vivamus scelerisque rutrum tristique. Praesent a finibus nibh."
+  m_Text: "Rysowanie i praca z obiektami 3D. Umo\u017Cliwia wczytanie pliku z obiektem
+    3D i rysowanie za pomoc\u0105 kontrolera."
 --- !u!222 &1471110070
 CanvasRenderer:
   m_ObjectHideFlags: 0
