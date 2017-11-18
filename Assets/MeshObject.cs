@@ -16,14 +16,22 @@ using UnityEngine;
 
 public class MeshObject : MonoBehaviour {
 
-	void Start () {}
+    string basePath = "C:\\tinker.obj";
+
+    void Start () {
+        Load(basePath);
+    }
 	
 	void Update () {
+
+    }
+
+    private void Load(string path) {
         //objekt do importowanie plikow w formacie .obj
         var objImporter = new ObjImporter();
 
         //właściwe załadowanie pliku do pamięci
-        Mesh loadedMesh = objImporter.ImportFile("C:\\tinker.obj");
+        Mesh loadedMesh = objImporter.ImportFile(path);
 
         //pobranie referencji do objektu w unity
         MeshFilter unityMesh = GetComponent<MeshFilter>();
