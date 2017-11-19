@@ -66,6 +66,7 @@
      <Compile Include="Assets\Kinect\KinectView\Scripts\MultiSourceManager.cs" />
      <Compile Include="Assets\KinectUIModule\Scripts\KinectInputModule.cs" />
      <Compile Include="Assets\KinectUIModule\Scripts\KinectUI\AbstractKinectUICursor.cs" />
+     <Compile Include="Assets\KinectUIModule\Scripts\KinectUI\KinectDrawLineCursor.cs" />
      <Compile Include="Assets\KinectUIModule\Scripts\KinectUI\KinectUICursor.cs" />
      <Compile Include="Assets\KinectUIModule\Scripts\KinectUI\KinectUIWaitCursor.cs" />
      <Compile Include="Assets\KinectUIModule\Scripts\KinectUI\KinectUIWaitOverButton.cs" />
