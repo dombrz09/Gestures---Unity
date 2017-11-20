@@ -17,6 +17,7 @@ a29102380be6cb49bc43d73159c08e00 Assembly-CSharp.dll:.KinectUICursor
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.BodySourceManager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MultiSourceManager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.FollowMouse
+47ac1a9da19c6e739c2c44277e63a616 Assembly-CSharp.dll:.KinectDrawLineCursor
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 49cd62a578efc0a599b810a2b66cd49c UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -95,7 +96,6 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 7b848b7feaa524953d09fc1851efa6da UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 c24a21b131bfa67be1162db2cba4b52b UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 26c4141463cfedbc3657e19a1c678747 Assembly-CSharp.dll:.KinectInputModule
-76119242f799591c84bce8d3be04eee2 Assembly-CSharp.dll:.RotateTarget
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -153,3 +153,4 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 35713e15bc258c4baca73d02c15ccadf Assembly-CSharp.dll:.ColorSourceView
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DisableOnStart
 760d61dcd067c1148397c7cadd4f2e33 Assembly-CSharp.dll:.InfraredSourceView
+60373152fdcae2c358c3ba4c5a636d8e Assembly-CSharp.dll:.RotateTarget
