@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
+//using UnityEditor;
 using System.Text;
 using UnityEngine.UI;
 using System.Diagnostics;
@@ -47,8 +47,9 @@ public class LoadFile : MonoBehaviour {
     public void loadFile()
     {
         //ścieżka do pliku .pdf
-        string path = EditorUtility.OpenFilePanel("Load .pdf File", "", "pdf");
-        path = path.Replace("/", "\\");
+        //string path = EditorUtility.OpenFilePanel("Load .pdf File", "", "pdf");
+        string path = System.IO.Directory.GetCurrentDirectory() + "\\Assets\\example.pdf";
+        //path = path.Replace("/", "\\");
         string[] pathArray = path.Split('\\');
         this.filenameWithExtension = pathArray[pathArray.Length - 1];
         this.filename = System.IO.Path.GetFileNameWithoutExtension(this.filenameWithExtension);

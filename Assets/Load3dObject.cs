@@ -13,7 +13,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
+//using UnityEditor;
 using System.Text;
 using UnityEngine.UI;
 
@@ -24,7 +24,8 @@ public class Load3dObject : MonoBehaviour {
     public void load3dObject()
     {
         //ścieżka do pliku .obj
-        string path = EditorUtility.OpenFilePanel("Load 3D Object", "", "obj");
+        //string path = EditorUtility.OpenFilePanel("Load 3D Object", "", "obj");
+        string path = System.IO.Directory.GetCurrentDirectory() + "\\Assets\\tinker.obj";
         if (path.Length > 0)
         {
             objectPath.text = path;
