@@ -22,7 +22,7 @@ public class DetectJointsLeft : MonoBehaviour {
     public GameObject BodySrcManager;
     public JointType TrackedJoint;
     private BodySourceManager bodyManager;
-    public Body[] bodies;
+    private Body[] bodies;
     public float multiplier = 15f;
     public float x, y, z;
     public GameObject Hand;
@@ -47,12 +47,12 @@ public class DetectJointsLeft : MonoBehaviour {
         {
             return;
         }
-        this.bodies = bodyManager.GetData();
-        if (this.bodies == null)
+        bodies = bodyManager.GetData();
+        if (bodies == null)
         {
             return;
         }
-        foreach (var body in this.bodies)
+        foreach (var body in bodies)
         {
             if (body == null)
             {
