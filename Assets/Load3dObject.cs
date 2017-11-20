@@ -21,11 +21,11 @@ public class Load3dObject : MonoBehaviour {
 
     public Text objectPath;
 
-    public void load3dObject_Onclick()
+    public void load3dObject()
     {
         //ścieżka do pliku .obj
         string path = EditorUtility.OpenFilePanel("Load 3D Object", "", "obj");
-        if(path.Length > 0)
+        if (path.Length > 0)
         {
             objectPath.text = path;
         }
