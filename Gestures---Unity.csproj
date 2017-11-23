@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
-    <UnityVersion>2017.1.0p5</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <UnityVersion>2017.1.0f3</UnityVersion>
+    <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -80,12 +78,39 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Gestures---Unity.Plugins.csproj">
+      <Project>{3B34320E-8121-5B3C-6E62-FCED8932F9A7}</Project>
+      <Name>Gestures---Unity.Plugins</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\ChangeScene.cs" />
     <Compile Include="Assets\DrawLine.cs" />
     <Compile Include="Assets\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
+    <Compile Include="Assets\Kinect\KinectView\Scripts\BodySourceManager.cs" />
+    <Compile Include="Assets\Kinect\KinectView\Scripts\BodySourceView.cs" />
+    <Compile Include="Assets\Kinect\KinectView\Scripts\ColorSourceManager.cs" />
+    <Compile Include="Assets\Kinect\KinectView\Scripts\ColorSourceView.cs" />
+    <Compile Include="Assets\Kinect\KinectView\Scripts\DepthSourceManager.cs" />
+    <Compile Include="Assets\Kinect\KinectView\Scripts\DepthSourceView.cs" />
+    <Compile Include="Assets\Kinect\KinectView\Scripts\DisableOnStart.cs" />
+    <Compile Include="Assets\Kinect\KinectView\Scripts\InfraredSourceManager.cs" />
+    <Compile Include="Assets\Kinect\KinectView\Scripts\InfraredSourceView.cs" />
+    <Compile Include="Assets\Kinect\KinectView\Scripts\MultiSourceManager.cs" />
+    <Compile Include="Assets\KinectToMouseProcesInitializer.cs" />
+    <Compile Include="Assets\KinectUIModule\Scripts\KinectInputModule.cs" />
+    <Compile Include="Assets\KinectUIModule\Scripts\KinectUI\AbstractKinectUICursor.cs" />
+    <Compile Include="Assets\KinectUIModule\Scripts\KinectUI\KinectDrawLineCursor.cs" />
+    <Compile Include="Assets\KinectUIModule\Scripts\KinectUI\KinectUICursor.cs" />
+    <Compile Include="Assets\KinectUIModule\Scripts\KinectUI\KinectUIWaitCursor.cs" />
+    <Compile Include="Assets\KinectUIModule\Scripts\KinectUI\KinectUIWaitOverButton.cs" />
     <Compile Include="Assets\MeshObject.cs" />
     <Compile Include="Assets\ObjImporter.cs" />
     <Compile Include="Assets\RotateTarget.cs" />
+    <Compile Include="Assets\Scripts\ButtonTest.cs" />
+    <Compile Include="Assets\Scripts\CaptureScreenShot.cs" />
+    <Compile Include="Assets\Scripts\EmojiRotator.cs" />
+    <Compile Include="Assets\Scripts\FollowMouse.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

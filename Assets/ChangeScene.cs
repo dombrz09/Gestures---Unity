@@ -5,9 +5,9 @@
 //Description:  Obracanie obiektu
 /////////////////////////////////////////////////
 //                  CHANGE                      
-//Author:
-//Date:
-//Description:
+//Author:       Piotr Arent
+//Date:         2017-11-21
+//Description:  Usunięcie komentarza do metody update która została usunięta metaforyczne 100 lat temu.
 /////////////////////////////////////////////////
 
 using System.Collections;
@@ -16,7 +16,6 @@ using UnityEngine;
 
 public class ChangeScene : MonoBehaviour {
 
-	// Update is called once per frame
 	public void ChangeToScene (string sceneToChangeTo) {
         Application.LoadLevel(sceneToChangeTo);
 	}
