@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1406,7 +1406,6 @@ GameObject:
   - component: {fileID: 508227453}
   - component: {fileID: 508227452}
   - component: {fileID: 508227457}
-  - component: {fileID: 508227458}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1492,22 +1491,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 508227451}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e954a593cefbed84f83f38154e437c3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1137252091500694, guid: 54698e32dd1ff864680d168434e58300, type: 2}
---- !u!114 &508227458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 508227451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9a9089ec8324b8469225eb8994c2f65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1137252091500694, guid: 54698e32dd1ff864680d168434e58300, type: 2}
   speedH: 2
   speedV: 2
 --- !u!1 &634154528
@@ -5204,6 +5190,20 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0

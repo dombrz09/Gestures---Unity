@@ -10,9 +10,9 @@
 //Description:  Zmiana sposobu działania kamery
 /////////////////////////////////////////////////
 //                  CHANGE                      
-//Author:
-//Date:
-//Description:
+//Author:       Dominika Brzozowska
+//Date:         2017-11-23
+//Description:  Foward/back - mouse scroll, delete target
 /////////////////////////////////////////////////
 
 using UnityEngine;
@@ -20,9 +20,6 @@ using UnityEngine;
 
 public class RotateTarget : MonoBehaviour
 {
-    //Cube (target)
-    public GameObject target;
-
 
     //Speed
     private float speed = 10f;
@@ -39,16 +36,16 @@ public class RotateTarget : MonoBehaviour
     void Update()
     {
 
-        //Sprawdzenie czy lewy przycisk myszy jest wciśniety
-        if (((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) || Input.GetMouseButton(0)) && target != null)
+        //Forward - scroll
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f)
             moveCameraForward();
 
-        //Sprawdzenie czy prawy przycisk myszy jest wciśniety
-        if (((Input.touchCount > 0 && Input.GetTouch(1).phase == TouchPhase.Began) || Input.GetMouseButton(1)) && target != null)
+        //Back - scroll
+        if ((Input.GetAxis("Mouse ScrollWheel") < 0f))
             moveCameraBack();
 
         //Sprawdzenie czy środkowy przycisk myszy jest wciśniety
-        if (((Input.touchCount > 0 && Input.GetTouch(2).phase == TouchPhase.Began) || Input.GetMouseButton(2)) && target != null)
+        if (((Input.touchCount > 0 && Input.GetTouch(2).phase == TouchPhase.Began) || Input.GetMouseButton(2)))
             rotateCamera();
     }
 
