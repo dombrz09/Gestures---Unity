@@ -20,6 +20,9 @@ public class KinectToMouseProcesInitializer : MonoBehaviour {
     {
         Debug.Log("proces dziala");
 
+        string fileName = "KinectV2MouseControl.exe";
+
+        System.Diagnostics.Process.Start("KinectV2MouseControl.exe");
     }
 
     // Metoda wywowyławana przy naciśnięciu przycisku. Zajmuje się startowaniem wątku który wywołuje metode KinectToMouse.
