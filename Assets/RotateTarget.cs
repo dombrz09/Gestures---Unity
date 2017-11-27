@@ -30,11 +30,27 @@ public class RotateTarget : MonoBehaviour
     private float yaw = 0.0f;
     private float pitch = 0.0f;
 
+    private Transform target;
+
 
     void Start() { }
 
     void Update()
     {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            if (Input.GetAxis("Mouse X") > 0f)
+                transform.RotateAround(Vector3.zero, Vector3.up, 100 * Time.deltaTime);
+
+            if (Input.GetAxis("Mouse X") < 0f)
+                transform.RotateAround(Vector3.zero, Vector3.down, 100 * Time.deltaTime);
+
+            if (Input.GetAxis("Mouse Y") > 0f)
+                transform.RotateAround(Vector3.zero, Vector3.right, 100 * Time.deltaTime);
+
+            if (Input.GetAxis("Mouse Y") < 0f)
+                transform.RotateAround(Vector3.zero, Vector3.left, 100 * Time.deltaTime);
+        }
 
         //Forward - scroll
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
