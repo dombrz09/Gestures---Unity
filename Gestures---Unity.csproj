@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3719D168-471D-226A-C1C1-714F2C917DD6}</ProjectGuid>
+    <ProjectGuid>{1DE6340E-F7F1-977D-4DB1-F508F98AAB86}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp.dll</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -16,7 +16,7 @@
     <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
-    <UnityVersion>2017.1.0f3</UnityVersion>
+    <UnityVersion>2017.1.0p5</UnityVersion>
     <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
@@ -78,14 +78,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Gestures---Unity.Plugins.csproj">
-      <Project>{3B34320E-8121-5B3C-6E62-FCED8932F9A7}</Project>
-      <Name>Gestures---Unity.Plugins</Name>
+    <ProjectReference Include="Gestures---Unity2.Plugins.csproj">
+      <Project>{7780A3A0-536B-1272-D76C-5936BF165448}</Project>
+      <Name>Gestures---Unity2.Plugins</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ChangeScene.cs" />
     <Compile Include="Assets\DrawLine.cs" />
+    <Compile Include="Assets\DrawLine2.cs" />
     <Compile Include="Assets\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
     <Compile Include="Assets\Kinect\KinectView\Scripts\BodySourceManager.cs" />
     <Compile Include="Assets\Kinect\KinectView\Scripts\BodySourceView.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="Assets\Scripts\CaptureScreenShot.cs" />
     <Compile Include="Assets\Scripts\EmojiRotator.cs" />
     <Compile Include="Assets\Scripts\FollowMouse.cs" />
+    <Compile Include="Assets\TransformShape.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
