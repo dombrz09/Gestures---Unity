@@ -14,6 +14,12 @@
 //Date:         2017-11-23
 //Description:  Foward/back - mouse scroll, delete target
 /////////////////////////////////////////////////
+//                  CHANGE                      
+//Author:       Grzegorz Jaruszewski
+//Date:         2017-12-02
+//Description:  Zwiększenie wartości progu aktywacji ruchu 
+//              w danym kierunku przy poruszaniu obiektem.
+/////////////////////////////////////////////////
 
 using UnityEngine;
 
@@ -39,16 +45,16 @@ public class RotateTarget : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            if (Input.GetAxis("Mouse X") > 0f)
+            if (Input.GetAxis("Mouse X") > 0.5f)
                 transform.RotateAround(Vector3.zero, Vector3.up, 100 * Time.deltaTime);
 
-            if (Input.GetAxis("Mouse X") < 0f)
+            if (Input.GetAxis("Mouse X") < -0.5f)
                 transform.RotateAround(Vector3.zero, Vector3.down, 100 * Time.deltaTime);
 
-            if (Input.GetAxis("Mouse Y") > 0f)
+            if (Input.GetAxis("Mouse Y") > 0.5f)
                 transform.RotateAround(Vector3.zero, Vector3.right, 100 * Time.deltaTime);
 
-            if (Input.GetAxis("Mouse Y") < 0f)
+            if (Input.GetAxis("Mouse Y") < -0.5f)
                 transform.RotateAround(Vector3.zero, Vector3.left, 100 * Time.deltaTime);
         }
 

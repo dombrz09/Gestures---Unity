@@ -109,6 +109,7 @@
     <Compile Include="Assets\Load3dObject.cs" />
     <Compile Include="Assets\LoadFile.cs" />
     <Compile Include="Assets\MeshObject.cs" />
+    <Compile Include="Assets\MiscellaneousMethods.cs" />
     <Compile Include="Assets\ObjImporter.cs" />
     <Compile Include="Assets\RotateTarget.cs" />
     <Compile Include="Assets\Scripts\ButtonTest.cs" />
