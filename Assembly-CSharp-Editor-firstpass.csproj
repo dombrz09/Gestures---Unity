@@ -52,6 +52,16 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Standard Assets\Editor\KinectCopyPluginDataHelper.cs" />
+     <None Include="Assets\Ghostscript\openjpeg\src\lib\openjp2\CMakeLists.txt" />
+     <None Include="Assets\Ghostscript\doc\pscet_status.txt" />
+     <None Include="Assets\Ghostscript\libpng\contrib\examples\README.txt" />
+     <None Include="Assets\Ghostscript\doc\who_owns_what.txt" />
+     <None Include="Assets\Ghostscript\zlib\doc\rfc1952.txt" />
+     <None Include="Assets\Ghostscript\zlib\doc\algorithm.txt" />
+     <None Include="Assets\Ghostscript\zlib\doc\rfc1950.txt" />
+     <None Include="Assets\Ghostscript\zlib\doc\txtvsbin.txt" />
+     <None Include="Assets\Ghostscript\doc\pclxps\ghostpdl.txt" />
+     <None Include="Assets\Ghostscript\zlib\doc\rfc1951.txt" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
