@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/line.unity
+- path: Assets/explore_gestures.unity
   isLoaded: 1
   isActive: 1
