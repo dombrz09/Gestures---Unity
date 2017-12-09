@@ -158,7 +158,6 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 35713e15bc258c4baca73d02c15ccadf Assembly-CSharp.dll:.ColorSourceView
 68078b2d906ea809b0d9979a737f23e4 Assembly-CSharp.dll:.RotateTarget
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MiscellaneousMethods
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PlayVideo
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DisableOnStart
 760d61dcd067c1148397c7cadd4f2e33 Assembly-CSharp.dll:.InfraredSourceView
 8daec05b5d80d8544f74f366e3b93adc Assembly-CSharp.dll:.Load3dObject
