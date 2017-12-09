@@ -8,47 +8,29 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading;
 using UnityEngine;
 
 public class KinectToMouseProcesInitializer : MonoBehaviour {
 
-    Thread kinectToMouseThread = new Thread(KinectToMouse);
-    static int Guard = 0;
-    
-    static void KinectToMouse()
-    {
-        Debug.Log("proces dziala");
-
+    static Process process = null;
         string fileName = "KinectV2MouseControl.exe";
 
-        System.Diagnostics.Process.Start("KinectV2MouseControl.exe");
-    }
-
-    // Metoda wywowyławana przy naciśnięciu przycisku. Zajmuje się startowaniem wątku który wywołuje metode KinectToMouse.
     public void OnClickInitOrStop()
     {
-        if(kinectToMouseThread.Name == null)
+ 
+        if (process == null || process.HasExited)
         {
-            kinectToMouseThread.Name = "Kinect To Mouse Proces";
-        }
-        if (Guard == 0)
-        {
-            kinectToMouseThread.Start();
-            kinectToMouseThread.IsBackground = true;
-            Debug.Log("watek stworzony");
-
-            Guard = 1;
+            process = new Process();
+            process.StartInfo.FileName = fileName;
+            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            process.Start();
         }
         else
-        if(Guard == 1)
         {
-            kinectToMouseThread = new Thread(KinectToMouse);
-            GC.Collect();
-
-            Debug.Log("watek zatrzymany");
-
-            Guard = 0;
+            process.Kill();
         }
     }
 
@@ -59,6 +41,7 @@ public class KinectToMouseProcesInitializer : MonoBehaviour {
 
     private void OnDestroy()
     {
-        kinectToMouseThread.Abort();
+        if (process != null && !process.HasExited)
+            process.Kill();
     }
 }
