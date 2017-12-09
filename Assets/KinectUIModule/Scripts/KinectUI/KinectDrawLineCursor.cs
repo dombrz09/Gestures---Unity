@@ -72,7 +72,7 @@ public class KinectDrawLineCursor : AbstractKinectUICursor
              //Zmiana koloru wraz ze sprawdzeniem by nie wychodzić po za zakres tablicy
             if (_data.IsPressing)
             {
-            //    mousePos_e = mRay.GetPoint(rayDistance);
+                //mousePos_e = mRay.GetPoint(rayDistance);
 
                 if (index < line_color.Length - 1 )
                     index++;
