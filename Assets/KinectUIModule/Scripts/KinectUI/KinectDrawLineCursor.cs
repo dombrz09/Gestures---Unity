@@ -46,7 +46,9 @@ public class KinectDrawLineCursor : AbstractKinectUICursor
 
     private Vector3 _initScale;
 
-    public override void Start()
+    private bool juststarted = true;
+    
+        public override void Start()
     {
         base.Start();
         _initScale = transform.localScale;
@@ -70,16 +72,16 @@ public class KinectDrawLineCursor : AbstractKinectUICursor
             if (objPlane.Raycast(mRay, out rayDistance))
 
              //Zmiana koloru wraz ze sprawdzeniem by nie wychodzić po za zakres tablicy
-            if (_data.IsPressing)
+            if (juststarted)
             {
-                //mousePos_e = mRay.GetPoint(rayDistance);
+                mousePos_e = mRay.GetPoint(rayDistance);
 
                 if (index < line_color.Length - 1 )
                     index++;
                 else
                     index = 0;
             }
-
+            juststarted = false;
             //Ustawienie koloru
             MeshRenderer beginRenderer = begin.GetComponent<MeshRenderer>();
             MeshRenderer endRenderer = end.GetComponent<MeshRenderer>();
@@ -103,6 +105,8 @@ public class KinectDrawLineCursor : AbstractKinectUICursor
 
             //Wywołujemy procedurę, która obliczy nam pozycję cylindra (odświeża)
             UpdateCylinderPosition(cylinder, begin.transform.position, end.transform.position, line_color[index]);
+        if (_data.CurrentHandState.Equals(Windows.Kinect.HandState.Open))
+            juststarted = true;
     }
 
     private void InstantiateCylinder(Transform cylinderPrefab, Vector3 beginPoint, Vector3 endPoint)

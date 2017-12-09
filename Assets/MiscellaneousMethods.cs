@@ -10,6 +10,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MiscellaneousMethods : MonoBehaviour {
 
@@ -21,34 +22,30 @@ public class MiscellaneousMethods : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-
     }
 
     // Update is called once per frame
     void Update() {
-        ExitApplication();
-        MinMaxApplication();
     }
 
     // Zamyka aplikację
-    void ExitApplication()
+    public void ExitApplication()
     {
-        if (Input.GetKey(KeyCode.Escape))
-        {
             Application.Quit();
-        }
     }
 
     // Minimalizuje / Maksymalizuje aplikację
-    void MinMaxApplication()
+    public void MinMaxApplication()
     {
-        if (Input.GetKey(KeyCode.F3))
-        {
-            ShowWindow(GetActiveWindow(), 2);
-        }
-        if (Input.GetKey(KeyCode.F4))
-        {
-            ShowWindow(GetActiveWindow(), 3);
-        }
+        //Minimalizuj
+        ShowWindow(GetActiveWindow(), 2);
+
+        //Maksymalizuj
+        //ShowWindow(GetActiveWindow(), 3);
+    }
+
+    void ToggleMenuButton()
+    {
+        
     }
 }

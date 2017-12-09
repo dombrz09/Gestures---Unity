@@ -17,10 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/emptyScene.unity
     guid: 1662fc03784a0fa429000df2ba9f38cd
-  - enabled: 1
+  - enabled: 0
     path: Assets/loadPpt.unity
     guid: ac07f2aa7833545458ba3ecca4a38354
-  - enabled: 1
+  - enabled: 0
     path: Assets/o_nas.unity
     guid: 70626d1ac7ba43345bf59ac7570ddc07
   - enabled: 1
@@ -60,6 +60,7 @@ EditorBuildSettings:
     path: Assets/Gestures_Video_Scenes/gesture_scroll_down.unity
     guid: 4287d80a5539d924e9a39edce9a1f537
   - enabled: 1
+    path: Assets/Gestures_Video_Scenes/gesture_scroll_up.unity
     path: Assets/lineReloadM.unity
     guid: ee7141d8ac52c4b47a5b744371acf90c
   - enabled: 1
