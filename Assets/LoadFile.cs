@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEditor;
 using System.Text;
 using UnityEngine.UI;
 using System.Diagnostics;
@@ -17,6 +16,47 @@ public class LoadFile : MonoBehaviour {
     private string mainPath;
     public Text currentImg;
     public Text actionFlag;
+
+    public Button PDFfile_1;public Button PDFfile_2;public Button PDFfile_3;
+    public Button PDFfile_4;public Button PDFfile_5;public Button PDFfile_6;
+    public Button PDFfile_7;public Button PDFfile_8;public Button PDFfile_9;
+    public Button PDFfile_10;public Button PDFfile_11;public Button PDFfile_12;
+    public Button PDFfile_13;public Button PDFfile_14;public Button PDFfile_15;
+
+    public Text PDFfile_text_1;public Text PDFfile_text_2;public Text PDFfile_text_3;
+    public Text PDFfile_text_4;public Text PDFfile_text_5;public Text PDFfile_text_6;
+    public Text PDFfile_text_7;public Text PDFfile_text_8;public Text PDFfile_text_9;
+    public Text PDFfile_text_10;public Text PDFfile_text_11;public Text PDFfile_text_12;
+    public Text PDFfile_text_13;public Text PDFfile_text_14;public Text PDFfile_text_15;
+
+    private Button[] ButtonArray = new Button[15];
+    private Text[] TextArray = new Text[15];
+    private string[] filesPathArray;
+
+    public void setFilesFromDirectory()
+    {
+        this.TextArray[0] = PDFfile_text_1;this.TextArray[1] = PDFfile_text_2;this.TextArray[2] = PDFfile_text_3;
+        this.TextArray[3] = PDFfile_text_4;this.TextArray[4] = PDFfile_text_5;this.TextArray[5] = PDFfile_text_6;
+        this.TextArray[6] = PDFfile_text_7;this.TextArray[7] = PDFfile_text_8;this.TextArray[8] = PDFfile_text_9;
+        this.TextArray[9] = PDFfile_text_10;this.TextArray[10] = PDFfile_text_11;this.TextArray[11] = PDFfile_text_12;
+        this.TextArray[12] = PDFfile_text_13;this.TextArray[13] = PDFfile_text_14;this.TextArray[14] = PDFfile_text_15;
+
+        this.ButtonArray[0] = PDFfile_1;this.ButtonArray[1] = PDFfile_2;this.ButtonArray[2] = PDFfile_3;
+        this.ButtonArray[3] = PDFfile_4;this.ButtonArray[4] = PDFfile_5;this.ButtonArray[5] = PDFfile_6;
+        this.ButtonArray[6] = PDFfile_7;this.ButtonArray[7] = PDFfile_8;this.ButtonArray[8] = PDFfile_9;
+        this.ButtonArray[9] = PDFfile_10;this.ButtonArray[10] = PDFfile_11;this.ButtonArray[11] = PDFfile_12;
+        this.ButtonArray[12] = PDFfile_13;this.ButtonArray[13] = PDFfile_14;this.ButtonArray[14] = PDFfile_15;
+
+        this.filesPathArray = Directory.GetFiles(System.IO.Directory.GetCurrentDirectory() + "\\YourFiles\\", "*.pdf");
+
+        for (int i = 0; i < this.filesPathArray.Length; i++)
+        {
+            string[] pathArray = this.filesPathArray[i].Split('\\');
+            string filenameWithExtension = pathArray[pathArray.Length - 1];
+            this.TextArray[i].text = filenameWithExtension;
+            this.ButtonArray[i].gameObject.SetActive(true);
+        }
+    }
 
     private void deleteOldFiles(String outputImagesPath)
     {
@@ -48,12 +88,10 @@ public class LoadFile : MonoBehaviour {
         proc.WaitForExit();
     }
 
-    public void loadFile()
+    public void loadFile(int number)
     {
         //ścieżka do pliku .pdf
-        //string path = EditorUtility.OpenFilePanel("Load .pdf File", "", "pdf");
-        string path = System.IO.Directory.GetCurrentDirectory() + "\\Assets\\example.pdf";
-        //path = path.Replace("/", "\\");
+        string path = this.filesPathArray[number];
         string[] pathArray = path.Split('\\');
         this.filenameWithExtension = pathArray[pathArray.Length - 1];
         this.filename = System.IO.Path.GetFileNameWithoutExtension(this.filenameWithExtension);
@@ -78,6 +116,10 @@ public class LoadFile : MonoBehaviour {
         if (System.IO.Directory.Exists(filesPath.text) == false)
         {
             System.IO.DirectoryInfo dir = System.IO.Directory.CreateDirectory(filesPath.text);
+        }
+        if (System.IO.Directory.Exists(System.IO.Directory.GetCurrentDirectory() + "\\YourFiles\\") == false)
+        {
+            System.IO.DirectoryInfo dir = System.IO.Directory.CreateDirectory(System.IO.Directory.GetCurrentDirectory() + "\\YourFiles\\");
         }
     }
 }

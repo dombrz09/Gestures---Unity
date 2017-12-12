@@ -138,7 +138,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ClearObject
-501876a8d763ba1713beca5c20b8c95e Assembly-CSharp.dll:.LoadFile
+af4564aef1685f39f112b090f1b0cbd4 Assembly-CSharp.dll:.LoadFile
 320b1dea36882b7d48cabbc3cacb8ac2 Assembly-CSharp.dll:.TransformShape
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 5f2ad81aa8994e8fbe25d1e57afe6773 UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
@@ -160,5 +160,5 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MiscellaneousMethods
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DisableOnStart
 760d61dcd067c1148397c7cadd4f2e33 Assembly-CSharp.dll:.InfraredSourceView
-8daec05b5d80d8544f74f366e3b93adc Assembly-CSharp.dll:.Load3dObject
-501876a8d763ba1713beca5c20b8c95e Assembly-CSharp.dll:.ChangeImages
+bb43737448a742fc6645cab9c845dcf7 Assembly-CSharp.dll:.Load3dObject
+6968aba1a1fe1077caa4d3741bf9e09f Assembly-CSharp.dll:.ChangeImages

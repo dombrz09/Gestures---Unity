@@ -24,10 +24,20 @@ public class ChangeImages : MonoBehaviour
     private RawImage image;
     private Texture2D img;
     private string[] filesPathArray;
+    public Button NextButton;
+    public Button PrevButton;
+    public Button FirstButton;
+    public Button LastButton;
+    public Button HidePDF;
 
     private void Start()
     {
         this.actionFlag.text = "true";
+        NextButton.gameObject.SetActive(true);
+        PrevButton.gameObject.SetActive(true);
+        FirstButton.gameObject.SetActive(true);
+        LastButton.gameObject.SetActive(true);
+        HidePDF.gameObject.SetActive(true);
     }
 
     private void getImage(int number)
