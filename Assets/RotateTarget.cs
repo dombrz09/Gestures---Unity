@@ -20,6 +20,12 @@
 //Description:  Zwiększenie wartości progu aktywacji ruchu 
 //              w danym kierunku przy poruszaniu obiektem.
 /////////////////////////////////////////////////
+//                  CHANGE                      
+//Author:       Grzegorz Jaruszewski
+//Date:         2017-12-19
+//Description:  Zakomentowanie linii odpowiedzialnych za obracanie.
+//              
+/////////////////////////////////////////////////
 
 using UnityEngine;
 
@@ -43,6 +49,7 @@ public class RotateTarget : MonoBehaviour
 
     void Update()
     {
+        /*
         if (Input.GetKey(KeyCode.Space))
         {
             if (Input.GetAxis("Mouse X") > 0.5f)
@@ -57,6 +64,7 @@ public class RotateTarget : MonoBehaviour
             if (Input.GetAxis("Mouse Y") < -0.5f)
                 transform.RotateAround(Vector3.zero, Vector3.left, 100 * Time.deltaTime);
         }
+        */
 
         //Forward - scroll
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
@@ -67,8 +75,10 @@ public class RotateTarget : MonoBehaviour
             moveCameraBack();
 
         //Sprawdzenie czy środkowy przycisk myszy jest wciśniety
+        /*
         if (((Input.touchCount > 0 && Input.GetTouch(2).phase == TouchPhase.Began) || Input.GetMouseButton(2)))
             rotateCamera();
+        */
     }
 
     void rotateCamera()
