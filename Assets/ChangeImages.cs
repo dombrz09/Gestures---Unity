@@ -1,8 +1,8 @@
 ﻿/////////////////////////////////////////////////
 //                  CREATE                      
-//Author:       Dawid SKlorz
+//Author:       Dawid Sklorz
 //Date:         2017-11-18
-//Description:  Pobranie ścieżki do obiektu
+//Description:  Zmiana stron dokumentu pdf
 /////////////////////////////////////////////////
 //                  CHANGE                      
 //Author:       
@@ -33,6 +33,7 @@ public class ChangeImages : MonoBehaviour
     private void Start()
     {
         this.actionFlag.text = "true";
+        //Pokazanie obiektów
         NextButton.gameObject.SetActive(true);
         PrevButton.gameObject.SetActive(true);
         FirstButton.gameObject.SetActive(true);
@@ -40,6 +41,7 @@ public class ChangeImages : MonoBehaviour
         HidePDF.gameObject.SetActive(true);
     }
 
+    //Wstawienie obrazu jpg jako teksture do objektu
     private void getImage(int number)
     {
         WWW imgLink = new WWW(this.filesPathArray[number]);
@@ -48,6 +50,7 @@ public class ChangeImages : MonoBehaviour
         this.image.texture = this.img;
     }
 
+    //Pobranie obecnego zdjecia(strony pdf)
     private int getCurrentImage(String currentImageText)
     {
         return Int32.Parse(currentImageText);
@@ -65,12 +68,14 @@ public class ChangeImages : MonoBehaviour
         }
     }
 
+    //Zmiana na następny obraz
     public void nextImage()
     {
         if (this.filesPath.text.Length > 0)
         {
             int currentImg = this.getCurrentImage(this.currentImg.text);
             currentImg++;
+            //Sprawdzenie zapobiegające wyświetleniu obrazu spoza zakresu dokumentu
             if (currentImg <= this.filesPathArray.Length)
             {
                 this.currentImg.text = (currentImg).ToString();
@@ -80,12 +85,14 @@ public class ChangeImages : MonoBehaviour
         }
     }
 
+    //Zmiana na poprzedni obraz
     public void previousImage()
     {
         if (this.filesPath.text.Length > 0)
         {
             int currentImg = this.getCurrentImage(this.currentImg.text);
             currentImg--;
+            //Sprawdzenie zapobiegające wyświetleniu obrazu spoza zakresu dokumentu
             if (currentImg > 0)
             {
                 this.currentImg.text = (currentImg).ToString();
@@ -95,6 +102,7 @@ public class ChangeImages : MonoBehaviour
         }
     }
 
+    //Wyświetlenie ostatniego dokumentu
     public void lastImage()
     {
         this.currentImg.text = (this.filesPathArray.Length).ToString();
@@ -102,6 +110,7 @@ public class ChangeImages : MonoBehaviour
         this.getImage(this.filesPathArray.Length - 1);
     }
 
+    //Wyświetlenie pierwszego dokumentu
     public void firstImage()
     {
         this.currentImg.text = "1";

@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/////////////////////////////////////////////////
+//                  CREATE                      
+//Author:       Dawid Sklorz
+//Date:         2017-11-18
+//Description:  Załadowanie pdf do Unity, konwersja do jpg(ghostscript)
+/////////////////////////////////////////////////
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Text;
@@ -33,6 +40,8 @@ public class LoadFile : MonoBehaviour {
     private Text[] TextArray = new Text[15];
     private string[] filesPathArray;
 
+
+    //przypisanie plików PDF objektom Unity
     public void setFilesFromDirectory()
     {
         this.TextArray[0] = PDFfile_text_1;this.TextArray[1] = PDFfile_text_2;this.TextArray[2] = PDFfile_text_3;
@@ -58,6 +67,7 @@ public class LoadFile : MonoBehaviour {
         }
     }
 
+    //Usuwanie starych jpg z folderu outputImagesPath
     private void deleteOldFiles(String outputImagesPath)
     {
         if (System.IO.Directory.Exists(outputImagesPath) == false)
@@ -72,6 +82,7 @@ public class LoadFile : MonoBehaviour {
         }
     }
 
+    //Kotwertowanie pdf -> jpg
     private void ConvertPDFToJPG(String inputPDFFile, String outputImagesPath)
     {
         this.deleteOldFiles(outputImagesPath);
@@ -105,13 +116,14 @@ public class LoadFile : MonoBehaviour {
             this.currentImg.text = "1";
             this.actionFlag.text = "true";
 
+            //Konwertowanie pdf do jpg do folderu
             this.ConvertPDFToJPG(path, this.pathDir);
-            
         }
     }
 
     private void Start()
     {
+        //Sprawdzenie czy katalog istnieje i w razie koniecznosci jego stowrzenie
         filesPath.text = System.IO.Directory.GetCurrentDirectory() + "\\FilesImg\\";
         if (System.IO.Directory.Exists(filesPath.text) == false)
         {

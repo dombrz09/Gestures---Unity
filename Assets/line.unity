@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -4309,7 +4309,7 @@ MonoBehaviour:
   m_Content: {fileID: 1147134300}
   m_Horizontal: 1
   m_Vertical: 1
-  m_MovementType: 1
+  m_MovementType: 2
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
@@ -5881,6 +5881,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590f7fe911349d445859356176f0f683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  filesPath: {fileID: 546561012}
+  currentImg: {fileID: 1449027939}
+  actionFlag: {fileID: 1319306931}
+  PDFfile_1: {fileID: 992715021}
+  PDFfile_2: {fileID: 1085339432}
+  PDFfile_3: {fileID: 1777036076}
+  PDFfile_4: {fileID: 2087022451}
+  PDFfile_5: {fileID: 1589931369}
+  PDFfile_6: {fileID: 466097489}
+  PDFfile_7: {fileID: 1921056474}
+  PDFfile_8: {fileID: 203206762}
+  PDFfile_9: {fileID: 261568148}
+  PDFfile_10: {fileID: 623908235}
+  PDFfile_11: {fileID: 1816388236}
+  PDFfile_12: {fileID: 840184553}
+  PDFfile_13: {fileID: 1765385350}
+  PDFfile_14: {fileID: 706368949}
+  PDFfile_15: {fileID: 1744312566}
+  PDFfile_text_1: {fileID: 162216241}
+  PDFfile_text_2: {fileID: 1511662092}
+  PDFfile_text_3: {fileID: 1538411533}
+  PDFfile_text_4: {fileID: 1937932038}
+  PDFfile_text_5: {fileID: 1610811840}
+  PDFfile_text_6: {fileID: 761103826}
+  PDFfile_text_7: {fileID: 1446604065}
+  PDFfile_text_8: {fileID: 2142784169}
+  PDFfile_text_9: {fileID: 478653681}
+  PDFfile_text_10: {fileID: 712534449}
+  PDFfile_text_11: {fileID: 344754791}
+  PDFfile_text_12: {fileID: 353154828}
+  PDFfile_text_13: {fileID: 785102392}
+  PDFfile_text_14: {fileID: 1111261250}
+  PDFfile_text_15: {fileID: 1549565606}
 --- !u!1 &678531751
 GameObject:
   m_ObjectHideFlags: 0
@@ -7897,6 +7930,7 @@ GameObject:
   m_Component:
   - component: {fileID: 910868142}
   - component: {fileID: 910868143}
+  - component: {fileID: 910868144}
   m_Layer: 0
   m_Name: Camera Parent
   m_TagString: Untagged
@@ -7929,7 +7963,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 023ccd68ec364df43886db2181725c26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lerpRate: 0.4
+--- !u!114 &910868144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 910868141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83fc6f437363eff46b1d83ea93acb61f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lerpRate: 0.2
 --- !u!1001 &935421953
 Prefab:
   m_ObjectHideFlags: 0
@@ -9449,6 +9494,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b96f3fbf8cb9bdd4a9aa568792464e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  filesPath: {fileID: 546561012}
+  currentImg: {fileID: 1449027939}
+  actionFlag: {fileID: 1319306931}
+  NextButton: {fileID: 1191769078}
+  PrevButton: {fileID: 47168095}
+  FirstButton: {fileID: 1557306828}
+  LastButton: {fileID: 827696975}
+  HidePDF: {fileID: 723433892}
 --- !u!114 &1147134302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11020,6 +11073,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c87402bfcaafe6548a9d73d382126c70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectPath: {fileID: 2134188349}
+  Objectfile_1: {fileID: 157878275}
+  Objectfile_2: {fileID: 522537226}
+  Objectfile_3: {fileID: 57834397}
+  Objectfile_4: {fileID: 380525901}
+  Objectfile_5: {fileID: 1867335691}
+  Objectfile_6: {fileID: 1209445117}
+  Objectfile_7: {fileID: 1708839341}
+  Objectfile_8: {fileID: 1129806331}
+  Objectfile_9: {fileID: 548353342}
+  Objectfile_10: {fileID: 7802296}
+  Objectfile_11: {fileID: 1864565701}
+  Objectfile_12: {fileID: 299009400}
+  Objectfile_13: {fileID: 269437324}
+  Objectfile_14: {fileID: 259516300}
+  Objectfile_15: {fileID: 1225840937}
+  Objectfile_text_1: {fileID: 1518766274}
+  Objectfile_text_2: {fileID: 2072319800}
+  Objectfile_text_3: {fileID: 117073487}
+  Objectfile_text_4: {fileID: 1796367266}
+  Objectfile_text_5: {fileID: 1554619840}
+  Objectfile_text_6: {fileID: 821462447}
+  Objectfile_text_7: {fileID: 1015350740}
+  Objectfile_text_8: {fileID: 2071314846}
+  Objectfile_text_9: {fileID: 1466239242}
+  Objectfile_text_10: {fileID: 93049158}
+  Objectfile_text_11: {fileID: 92953059}
+  Objectfile_text_12: {fileID: 556367216}
+  Objectfile_text_13: {fileID: 1595505329}
+  Objectfile_text_14: {fileID: 1495077206}
+  Objectfile_text_15: {fileID: 1064168043}
 --- !u!224 &1253608625
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14852,6 +14936,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1752017927}
   - component: {fileID: 1752017926}
+  - component: {fileID: 1752017928}
   m_Layer: 0
   m_Name: Input Manager
   m_TagString: Untagged
@@ -14883,6 +14968,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1752017928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1752017925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00489c292a386b74c8c7bfa3259b45df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1765385348
 GameObject:
   m_ObjectHideFlags: 0
