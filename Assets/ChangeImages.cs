@@ -5,9 +5,9 @@
 //Description:  Zmiana stron dokumentu pdf
 /////////////////////////////////////////////////
 //                  CHANGE                      
-//Author:       
-//Date:         
-//Description:  
+//Author:       Dominika Brzozowska       
+//Date:         2017-12-25         
+//Description:  Dodanie przybliżania/oddalania prezentacji 
 /////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
@@ -29,6 +29,11 @@ public class ChangeImages : MonoBehaviour
     public Button FirstButton;
     public Button LastButton;
     public Button HidePDF;
+    public Button zoomInB;
+    public Button zoomOutB;
+
+    private int zoom=140;
+    private bool first = true;
 
     private void Start()
     {
@@ -39,6 +44,8 @@ public class ChangeImages : MonoBehaviour
         FirstButton.gameObject.SetActive(true);
         LastButton.gameObject.SetActive(true);
         HidePDF.gameObject.SetActive(true);
+        zoomInB.gameObject.SetActive(true);
+        zoomOutB.gameObject.SetActive(true);
     }
 
     //Wstawienie obrazu jpg jako teksture do objektu
@@ -47,6 +54,8 @@ public class ChangeImages : MonoBehaviour
         WWW imgLink = new WWW(this.filesPathArray[number]);
         this.img = imgLink.texture;
         this.image = gameObject.GetComponent<RawImage>();
+        if(first==true)
+        GetComponent<RectTransform>().sizeDelta = new Vector2(100, 100);
         this.image.texture = this.img;
     }
 
@@ -65,6 +74,8 @@ public class ChangeImages : MonoBehaviour
             int currentImg = this.getCurrentImage(this.currentImg.text);
 
             this.getImage(currentImg - 1);
+            
+            
         }
     }
 
@@ -116,5 +127,27 @@ public class ChangeImages : MonoBehaviour
         this.currentImg.text = "1";
 
         this.getImage(0);
+    }
+
+    public void zoomIn()
+    {
+        if (first == false)
+            zoom = zoom + 40;
+
+        GetComponent<RectTransform>().sizeDelta = new Vector2(zoom, zoom);
+        first = false;
+
+    }
+
+    public void zoomOut()
+    {
+        if (first == true)
+            zoom = zoom - 140;
+        else
+            zoom = zoom - 40;
+
+        GetComponent<RectTransform>().sizeDelta = new Vector2(zoom, zoom);
+        first = false;
+
     }
 }

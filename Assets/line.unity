@@ -2222,7 +2222,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &244440531
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2235,7 +2235,7 @@ RectTransform:
   m_Children:
   - {fileID: 316833549}
   m_Father: {fileID: 1671441604}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -2280,7 +2280,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 244440533}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1147134301}
+        m_MethodName: zoomOut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &244440533
@@ -2639,11 +2650,11 @@ RectTransform:
   m_Children:
   - {fileID: 1895782604}
   m_Father: {fileID: 1671441604}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -288.7, y: -20.4}
+  m_AnchoredPosition: {x: -288.69998, y: -20.400026}
   m_SizeDelta: {x: 72.4, y: 35.800003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &261949917
@@ -3177,7 +3188,7 @@ RectTransform:
   m_Children:
   - {fileID: 1908477475}
   m_Father: {fileID: 1671441604}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -4233,6 +4244,7 @@ GameObject:
   - component: {fileID: 472457927}
   - component: {fileID: 472457926}
   - component: {fileID: 472457925}
+  - component: {fileID: 472457928}
   m_Layer: 5
   m_Name: Scroll View
   m_TagString: Untagged
@@ -4274,7 +4286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4326,6 +4338,26 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!223 &472457928
+Canvas:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 472457923}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &478653679
 GameObject:
   m_ObjectHideFlags: 0
@@ -4833,6 +4865,7 @@ GameObject:
   - component: {fileID: 538006408}
   - component: {fileID: 538006407}
   - component: {fileID: 538006406}
+  - component: {fileID: 538006410}
   m_Layer: 5
   m_Name: CanvasPresentation
   m_TagString: Untagged
@@ -4847,17 +4880,17 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 538006404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 0.7, y: 1, z: 1}
   m_Children:
   - {fileID: 472457924}
   m_Father: {fileID: 1671441604}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0074961}
-  m_SizeDelta: {x: 0, y: 0.014984}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 400, y: 212.93105}
+  m_SizeDelta: {x: 800, y: 425.8621}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &538006406
 MonoBehaviour:
@@ -4886,15 +4919,15 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_ReferenceResolution: {x: 800, y: 800}
+  m_ScreenMatchMode: 2
+  m_MatchWidthOrHeight: 0.815
   m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
+  m_FallbackScreenDPI: 0
+  m_DefaultSpriteDPI: 1
   m_DynamicPixelsPerUnit: 1
 --- !u!223 &538006408
 Canvas:
@@ -4907,7 +4940,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -4916,6 +4949,12 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!222 &538006410
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 538006404}
 --- !u!1 &539178883
 GameObject:
   m_ObjectHideFlags: 0
@@ -5845,6 +5884,7 @@ GameObject:
   m_Component:
   - component: {fileID: 668351329}
   - component: {fileID: 668351330}
+  - component: {fileID: 668351331}
   m_Layer: 5
   m_Name: LoadPdfAction
   m_TagString: Untagged
@@ -5914,6 +5954,25 @@ MonoBehaviour:
   PDFfile_text_13: {fileID: 785102392}
   PDFfile_text_14: {fileID: 1111261250}
   PDFfile_text_15: {fileID: 1549565606}
+--- !u!114 &668351331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 668351328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &678531751
 GameObject:
   m_ObjectHideFlags: 0
@@ -7982,6 +8041,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1671441604}
     m_Modifications:
+    - target: {fileID: 114376059434613132, guid: a846b90f865decf4bafee52aacddd4c6,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 224741687810801342, guid: a846b90f865decf4bafee52aacddd4c6,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -8082,6 +8146,66 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1105627994}
+    - target: {fileID: 114376059434613132, guid: a846b90f865decf4bafee52aacddd4c6,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114376059434613132, guid: a846b90f865decf4bafee52aacddd4c6,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114376059434613132, guid: a846b90f865decf4bafee52aacddd4c6,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114376059434613132, guid: a846b90f865decf4bafee52aacddd4c6,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1671441600}
+    - target: {fileID: 114376059434613132, guid: a846b90f865decf4bafee52aacddd4c6,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 114376059434613132, guid: a846b90f865decf4bafee52aacddd4c6,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114376059434613132, guid: a846b90f865decf4bafee52aacddd4c6,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114376059434613132, guid: a846b90f865decf4bafee52aacddd4c6,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114376059434613132, guid: a846b90f865decf4bafee52aacddd4c6,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 1671441600}
+    - target: {fileID: 114376059434613132, guid: a846b90f865decf4bafee52aacddd4c6,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 114376059434613132, guid: a846b90f865decf4bafee52aacddd4c6,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114376059434613132, guid: a846b90f865decf4bafee52aacddd4c6,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a846b90f865decf4bafee52aacddd4c6, type: 2}
   m_IsPrefabParent: 0
@@ -9480,8 +9604,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000011444, y: -134.51}
-  m_SizeDelta: {x: -183.3, y: 269.03}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1147134301
 MonoBehaviour:
@@ -9502,6 +9626,8 @@ MonoBehaviour:
   FirstButton: {fileID: 1557306828}
   LastButton: {fileID: 827696975}
   HidePDF: {fileID: 723433892}
+  zoomInB: {fileID: 1229583974}
+  zoomOutB: {fileID: 244440532}
 --- !u!114 &1147134302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10878,7 +11004,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1229583973
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10891,7 +11017,7 @@ RectTransform:
   m_Children:
   - {fileID: 20780869}
   m_Father: {fileID: 1671441604}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -10936,7 +11062,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1229583975}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1147134301}
+        m_MethodName: zoomIn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1229583975
@@ -11851,6 +11988,7 @@ GameObject:
   - component: {fileID: 1359672618}
   - component: {fileID: 1359672620}
   - component: {fileID: 1359672619}
+  - component: {fileID: 1359672621}
   m_Layer: 5
   m_Name: RawImage
   m_TagString: Untagged
@@ -11908,6 +12046,26 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1359672617}
+--- !u!223 &1359672621
+Canvas:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1359672617}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &1381903732
 GameObject:
   m_ObjectHideFlags: 0
@@ -13720,7 +13878,7 @@ RectTransform:
   m_Children:
   - {fileID: 2099328201}
   m_Father: {fileID: 1671441604}
-  m_RootOrder: 16
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -13997,7 +14155,7 @@ Prefab:
     - target: {fileID: 224741474992073506, guid: 0fa72111896edab4aa2171a92c85c319,
         type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0fa72111896edab4aa2171a92c85c319, type: 2}
@@ -14102,19 +14260,19 @@ RectTransform:
   - {fileID: 538006405}
   - {fileID: 2003044067}
   - {fileID: 845300721}
+  - {fileID: 261949916}
   - {fileID: 1229583973}
   - {fileID: 244440531}
-  - {fileID: 261949916}
   - {fileID: 1151579516}
   - {fileID: 1557306827}
   - {fileID: 827696974}
   - {fileID: 47168094}
   - {fileID: 1191769077}
   - {fileID: 1890923980}
-  - {fileID: 1660957041}
   - {fileID: 333834999}
-  - {fileID: 56377155}
   - {fileID: 1628118117}
+  - {fileID: 56377155}
+  - {fileID: 1660957041}
   - {fileID: 1157817982}
   - {fileID: 895816430}
   - {fileID: 1895237809}
@@ -16960,7 +17118,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2003044066}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
