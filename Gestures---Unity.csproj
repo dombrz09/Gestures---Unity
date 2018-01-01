@@ -91,6 +91,7 @@
     <Compile Include="Assets\DrawLine.cs" />
     <Compile Include="Assets\DrawLine2.cs" />
     <Compile Include="Assets\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
+    <Compile Include="Assets\GestureRecognationInitializer.cs" />
     <Compile Include="Assets\InputManager.cs" />
     <Compile Include="Assets\Kinect\KinectView\Scripts\BodySourceManager.cs" />
     <Compile Include="Assets\Kinect\KinectView\Scripts\BodySourceView.cs" />
