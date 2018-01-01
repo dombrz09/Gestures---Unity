@@ -14,34 +14,20 @@ using UnityEngine;
 
 public class KinectToMouseProcesInitializer : MonoBehaviour {
 
-    static Process process = null;
+    public void StartProcess()
+    {
         string fileName = "KinectV2MouseControl.exe";
 
-    public void OnClickInitOrStop()
-    {
- 
-        if (process == null || process.HasExited)
-        {
-            process = new Process();
-            process.StartInfo.FileName = fileName;
-            process.StartInfo.CreateNoWindow = true;
-            process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            process.Start();
-        }
-        else
-        {
-            process.Kill();
-        }
+        Process process = new Process();
+        process.StartInfo.FileName = fileName;
+        process.StartInfo.CreateNoWindow = true;
+        process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+        process.Start();
     }
 
-    void OnClickStop()
+    public void KillProcess()
     {
-        
-    }
-
-    private void OnDestroy()
-    {
-        if (process != null && !process.HasExited)
-            process.Kill();
+        Process[] processes = Process.GetProcessesByName("KinectV2MouseControl");
+        processes[0].Kill();
     }
 }
