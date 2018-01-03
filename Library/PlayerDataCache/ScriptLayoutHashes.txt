@@ -18,6 +18,7 @@ a29102380be6cb49bc43d73159c08e00 Assembly-CSharp.dll:.KinectUICursor
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MultiSourceManager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.FollowMouse
 47ac1a9da19c6e739c2c44277e63a616 Assembly-CSharp.dll:.KinectDrawLineCursor
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GestureRecognationInitializer
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 49cd62a578efc0a599b810a2b66cd49c UnityEngine.UI.dll:UnityEngine.UI.Button
