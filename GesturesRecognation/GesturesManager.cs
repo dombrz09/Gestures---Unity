@@ -14,9 +14,11 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
         private bool activeFlagAd = false;
         private bool activeFlagPp = false;
         private bool activeFlagGc = false;
+        private bool activeFlagGt = false;
         private bool startActionFlagAd = false;
         private bool startActionFlagPp = false;
         private bool startActionFlagGc = false;
+        private bool startActionFlagGt = false;
         private int currentZoom = 0;
         public int exitCounter = 0;
         public ProgramsController program = new ProgramsController();
@@ -91,6 +93,16 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
             return this.startActionFlagGc;
         }
 
+        public void setStartActionFlagGt(bool var)
+        {
+            this.startActionFlagGt = var;
+        }
+
+        public bool getStartActionFlagGt()
+        {
+            return this.startActionFlagGt;
+        }
+
         public void setActiveFlagGc(bool var)
         {
             this.activeFlagGc = var;
@@ -101,9 +113,19 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
             return this.activeFlagGc;
         }
 
+        public void setActiveFlagGt(bool var)
+        {
+            this.activeFlagGt = var;
+        }
+
+        public bool getActiveFlagGt()
+        {
+            return this.activeFlagGt;
+        }
+
         public void setPointerMouse()
         {
-            if(program.getCurrentProgram() == "Gc")
+            if (program.getCurrentProgram() == "Gc")
             {
                 program.pointer_Mouse(this, null);
             }
@@ -113,7 +135,7 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
         {
             if (gesture == "start")
             {
-                System.Diagnostics.Debug.WriteLine("program.getCurrentProgram() "+ program.getCurrentProgram());
+                System.Diagnostics.Debug.WriteLine("program.getCurrentProgram() " + program.getCurrentProgram());
                 if ((getActiveFlagAd() == false) && (program.getCurrentProgram() == "Ad"))
                 {
                     if (getStartActionFlagAd() == false)
@@ -141,6 +163,15 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
                     }
                     setActiveFlagGc(true);
                 }
+                else if ((getActiveFlagGt() == false) && (program.getCurrentProgram() == "Gt"))
+                {
+                    if (getStartActionFlagGt() == false)
+                    {
+                        program.start_Click(this, null);
+                        setStartActionFlagGt(true);
+                    }
+                    setActiveFlagGt(true);
+                }
             }
             else if (gesture == "next")
             {
@@ -152,9 +183,9 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
             }
             else if (gesture == "zoom_in")
             {
-                if(program.getCurrentProgram() == "Pp")
+                if (program.getCurrentProgram() == "Pp")
                 {
-                    if(this.currentZoom < 3)
+                    if (this.currentZoom < 3)
                     {
                         this.currentZoom++;
                         program.zIn_Click(this, null);
@@ -164,7 +195,7 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
                 {
                     program.zIn_Click(this, null);
                 }
-                
+
             }
             else if (gesture == "zoom_out")
             {

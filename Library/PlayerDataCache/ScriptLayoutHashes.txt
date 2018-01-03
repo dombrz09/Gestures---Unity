@@ -165,3 +165,4 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 760d61dcd067c1148397c7cadd4f2e33 Assembly-CSharp.dll:.InfraredSourceView
 bb43737448a742fc6645cab9c845dcf7 Assembly-CSharp.dll:.Load3dObject
 d831a793cae9948e1267c0507e16d903 Assembly-CSharp.dll:.ChangeImages
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ReceiveActionController
