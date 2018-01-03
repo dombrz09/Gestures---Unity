@@ -49,76 +49,79 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
             {
                 currentProgram = "Gc";
             }
+            else if (p.MainWindowTitle.Contains("Gestures"))
+            {
+                currentProgram = "Gt";
+            }
             return currentProgram;
         }
 
         public void zIn_Click(object sender, RoutedEventArgs e)
         {
-            sendKey("^{ADD}", "^{ADD}", "");
+            sendKey("^{ADD}", "^{ADD}", "", "{PGUP}");
         }
 
         public void start_Click(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine("Robie Ctrl+h");
-            sendKey("{F5}", "^{h}", "^{F5}");
+            sendKey("{F5}", "^{h}", "^{F5}", "");
         }
 
         public void end_Click(object sender, RoutedEventArgs e)
         {
-            sendKey("{ESC}", "{ESC}", "");
+            sendKey("{ESC}", "{ESC}", "", "");
         }
 
         public void previous_Click(object sender, RoutedEventArgs e)
         {
-            sendKey("{LEFT}", "{Left}", "{LEFT}");
+            sendKey("{LEFT}", "{Left}", "{LEFT}", "");
         }
 
         public void next_Click(object sender, RoutedEventArgs e)
         {
-            sendKey("{RIGHT}", "{Right}", "{RIGHT}");
+            sendKey("{RIGHT}", "{Right}", "{RIGHT}", "");
         }
 
         public void zOut_Click(object sender, RoutedEventArgs e)
         {
-            sendKey("^{SUBTRACT}", "^{SUBTRACT}", "");
+            sendKey("^{SUBTRACT}", "^{SUBTRACT}", "", "{PGDN}");
         }
 
         public void first_Click(object sender, RoutedEventArgs e)
         {
-            sendKey("{HOME}", "{HOME}", "");
+            sendKey("{HOME}", "{HOME}", "", "");
         }
 
         public void last_Click(object sender, RoutedEventArgs e)
         {
-            sendKey("{END}", "{END}", "");
+            sendKey("{END}", "{END}", "", "");
         }
 
         public void scroll_up_Click(object sender, RoutedEventArgs e)
         {
-            sendKey("{UP}", "{UP}", "");
+            sendKey("{UP}", "{UP}", "", "");
         }
 
         public void scroll_down_Click(object sender, RoutedEventArgs e)
         {
-            sendKey("{DOWN}", "{DOWN}", "");
+            sendKey("{DOWN}", "{DOWN}", "", "");
         }
 
         public void left_Click(object sender, RoutedEventArgs e)
         {
-            sendKey("{LEFT}", "{LEFT}", "");
+            sendKey("{LEFT}", "{LEFT}", "", "");
         }
 
         public void right_Click(object sender, RoutedEventArgs e)
         {
-            sendKey("{RIGHT}", "{RIGHT}", "");
+            sendKey("{RIGHT}", "{RIGHT}", "", "");
         }
 
         public void pointer_Mouse(object sender, RoutedEventArgs e)
         {
-            sendKey("{}", "{}", "^+{P}");
+            sendKey("{}", "{}", "^+{P}", "");
         }
 
-        private void sendKey(string Pp, string Ad, string Gc)
+        private void sendKey(string Pp, string Ad, string Gc, string Gt)
         {
             IntPtr hwnd = GetForegroundWindow();
             uint pid;
@@ -135,7 +138,13 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
             }
             else if (p.MainWindowTitle.Contains("Google Chrome"))
             {
+                System.Diagnostics.Debug.WriteLine("program Google Slides - CHROME!!!");
                 SendKeys.SendWait(Gc);
+            }
+            else if (p.MainWindowTitle.Contains("Gestures"))
+            {
+                System.Diagnostics.Debug.WriteLine("program Gesture!!!");
+                SendKeys.SendWait(Gt);
             }
         }
     }
