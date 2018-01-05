@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GesturesRecognation.Properties {
+namespace Microsoft.Samples.Kinect.DiscreteGestureBasics.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

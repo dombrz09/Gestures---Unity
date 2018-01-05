@@ -1,22 +1,52 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.IO;
+using UnityEngine.UI;
 
 public class ReceiveActionController : MonoBehaviour
 {
-    void Start()
-    {
-        this.Update();
-    }
+    public ChangeImages changeImages = new ChangeImages();
+    public PDFController pDFController = new PDFController();
+    public RotateTarget rotateTarget = new RotateTarget();
+
     void Update()
     {
         if (Input.GetKey(KeyCode.PageUp))
         {
-            //System.IO.File.WriteAllText(@"C:\Users\Dawid\Desktop\testX.txt", "zoom IN!!!!!!!!!!!!");
+            if(pDFController.getIsOpenPDF() == "1")
+            {
+                changeImages.zoomIn();
+            }
+            else
+            {
+                rotateTarget.moveCameraForward(1);
+            }
         }
         else if (Input.GetKey(KeyCode.PageDown))
         {
-            //System.IO.File.WriteAllText(@"C:\Users\Dawid\Desktop\testX.txt", "zoom OUT!!");
+            if (pDFController.getIsOpenPDF() == "1")
+            {
+                changeImages.zoomOut();
+            }
+            else
+            {
+                rotateTarget.moveCameraBack(1);
+            }
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            changeImages.previousImage();
+        }
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            changeImages.nextImage();
+        }
+        else if (Input.GetKey(KeyCode.Escape))
+        {
+            //click movethis - reverse
         }
     }
+    
 }

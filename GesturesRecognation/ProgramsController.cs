@@ -29,6 +29,17 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
         [DllImport("User32.dll")]
         static extern int SetForegroundWindow(IntPtr point);
         public string currentProgram;
+        public int yesPointerProgram = 0;
+
+        public void setStartCurrentProgram(string val)
+        {
+            System.IO.File.WriteAllText("startCurrentProgram.txt", val);
+        }
+
+        public string getStartCurrentProgram()
+        {
+            return System.IO.File.ReadAllText("startCurrentProgram.txt");
+        }
 
         public string getCurrentProgram()
         {
@@ -45,9 +56,13 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
             {
                 currentProgram = "Ad";
             }
-            else if (p.MainWindowTitle.Contains("Google Chrome"))
+            else if (p.MainWindowTitle.Contains("Prezentacje Google"))
             {
-                currentProgram = "Gc";
+                if(p.MainWindowTitle.Contains("Google Chrome"))
+                {
+                    yesPointerProgram = 1;
+                }
+                currentProgram = "Gs";
             }
             else if (p.MainWindowTitle.Contains("Gestures"))
             {
@@ -63,7 +78,11 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
 
         public void start_Click(object sender, RoutedEventArgs e)
         {
-            sendKey("{F5}", "^{h}", "^{F5}", "");
+            if (getStartCurrentProgram() != currentProgram)
+            {
+                sendKey("{F5}", "^{h}", "^{F5}", "");
+                setStartCurrentProgram(currentProgram);
+            }
         }
 
         public void end_Click(object sender, RoutedEventArgs e)
@@ -73,12 +92,12 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
 
         public void previous_Click(object sender, RoutedEventArgs e)
         {
-            sendKey("{LEFT}", "{Left}", "{LEFT}", "");
+            sendKey("{LEFT}", "{Left}", "{LEFT}", "{LEFT}");
         }
 
         public void next_Click(object sender, RoutedEventArgs e)
         {
-            sendKey("{RIGHT}", "{Right}", "{RIGHT}", "");
+            sendKey("{RIGHT}", "{Right}", "{RIGHT}", "{RIGHT}");
         }
 
         public void zOut_Click(object sender, RoutedEventArgs e)
@@ -121,7 +140,7 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
             sendKey("{}", "{}", "^+{P}", "");
         }
 
-        private void sendKey(string Pp, string Ad, string Gc, string Gt)
+        private void sendKey(string Pp, string Ad, string Gs, string Gt)
         {
             IntPtr hwnd = GetForegroundWindow();
             uint pid;
@@ -136,14 +155,12 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
             {
                 SendKeys.SendWait(Ad);
             }
-            else if (p.MainWindowTitle.Contains("Google Chrome"))
+            else if (p.MainWindowTitle.Contains("Prezentacje Google"))
             {
-                System.Diagnostics.Debug.WriteLine("program Google Slides - CHROME!!!");
-                SendKeys.SendWait(Gc);
+                SendKeys.SendWait(Gs);
             }
             else if (p.MainWindowTitle.Contains("Gestures"))
             {
-                System.Diagnostics.Debug.WriteLine("program Gesture!!!");
                 SendKeys.SendWait(Gt);
             }
         }
