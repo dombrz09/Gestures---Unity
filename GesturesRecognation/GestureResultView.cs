@@ -47,9 +47,11 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
 
         /// <summary> Image to display in UI which corresponds to tracking/detection state </summary>
         private ImageSource imageSource = null;
-        
+
         /// <summary> True, if the body is currently being tracked </summary>
         private bool isTracked = false;
+
+        public ProgramsController programsController = new ProgramsController();
 
         /// <summary>
         /// Initializes a new instance of the GestureResultView class and sets initial property values
@@ -58,7 +60,6 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
         /// <param name="isTracked">True, if the body is currently tracked</param>
         /// <param name="detected">True, if the gesture is currently detected for the associated body</param>
         /// <param name="confidence">Confidence value for detection of the 'Seated' gesture</param>
-        //private MainWindow mainWindow = new MainWindow();
         public GestureResultView(int bodyIndex, bool isTracked, bool detected, float confidence)
         {
             this.BodyIndex = bodyIndex;
@@ -116,7 +117,7 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
         /// <summary> 
         /// Gets a value indicating whether or not the body associated with the gesture detector is currently being tracked 
         /// </summary>
-        public bool IsTracked 
+        public bool IsTracked
         {
             get
             {
@@ -136,7 +137,7 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
         /// <summary> 
         /// Gets a value indicating whether or not the discrete gesture has been detected
         /// </summary>
-        public bool Detected 
+        public bool Detected
         {
             get
             {
@@ -203,20 +204,23 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
         {
             this.IsTracked = isBodyTrackingIdValid;
             this.Confidence = 0.0f;
-            //this.GestureNameText = "no_gesture";
 
             if (!this.IsTracked)
             {
+                this.ImageSource = this.notTrackedImage;
                 this.Detected = false;
+                this.BodyColor = Brushes.Gray;
             }
             else
             {
                 this.Detected = isGestureDetected;
+                this.BodyColor = this.trackedColors[this.BodyIndex];
 
                 if (this.Detected)
                 {
                     this.Confidence = detectionConfidence;
-                    if (detectionConfidence > 0.35) {
+                    if (detectionConfidence > 0.35)
+                    {
                         if (gestureName == "start_stop")
                         {
                             gesturesManager.exitCounter = 0;
@@ -226,16 +230,22 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
                                 if (gesturesManager.getrecogtationGestureFlag())
                                 {
                                     gesturesManager.setrecogtationGestureFlag(false);
-                                    ProcessManager processManager = new ProcessManager("KinectV2MouseControl");
-                                    processManager.checkProcess();
+                                    if(programsController.getCurrentProgram() != "Gt")
+                                    {
+                                        ProcessManager processManager = new ProcessManager("KinectV2MouseControl");
+                                        processManager.checkProcess();
+                                    }
                                     System.Diagnostics.Debug.WriteLine("OFF gesty");
                                     gesturesManager.setPointerMouse();
                                 }
                                 else
                                 {
                                     gesturesManager.setrecogtationGestureFlag(true);
-                                    ProcessManager processManager = new ProcessManager("KinectV2MouseControl");
-                                    processManager.checkProcess(true);
+                                    if (programsController.getCurrentProgram() != "Gt")
+                                    {
+                                        ProcessManager processManager = new ProcessManager("KinectV2MouseControl");
+                                        processManager.checkProcess(true);
+                                    }
                                     gesturesManager.doAction("start");
                                     System.Diagnostics.Debug.WriteLine("ON gesty");
                                 }
@@ -244,46 +254,46 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
                             }
                         }
                         if (gesturesManager.getrecogtationGestureFlag() == true)
+                        {
+                            if ((gesturesManager.getGestureFlag() != gestureName) && (gestureName != "start_stop"))
                             {
-                                if ((gesturesManager.getGestureFlag() != gestureName) && (gestureName != "start_stop"))
+                                System.Diagnostics.Debug.WriteLine("gest wykryty= " + gestureName);
+
+                                if (gestureName == "exit")
                                 {
-                                    System.Diagnostics.Debug.WriteLine("gest wykryty= " + gestureName);
-                                    
-                                    if(gestureName == "exit")
+                                    if (gesturesManager.exitCounter < 2)
                                     {
-                                        if (gesturesManager.exitCounter < 2)
-                                        {
-                                            ProcessManager processManager = new ProcessManager("KinectV2MouseControl");
-                                            processManager.checkProcess(true);
-                                            gesturesManager.setrecogtationGestureFlag(false);
-                                            System.Diagnostics.Debug.WriteLine("OFF gesty");
-                                            Thread.Sleep(TimeSpan.FromSeconds(2));
-                                            gesturesManager.setGestureFlag("");
-                                            gesturesManager.exitCounter++;
-                                        }
-                                        else
-                                        {
-                                            ProcessManager processManagerGestures = new ProcessManager("GesturesRecognation");
-                                            processManagerGestures.checkProcess();
-                                        }
-                                    }
-                                    else if (gestureName == "next" || gestureName == "previous" || gestureName == "zoom_in" || gestureName == "zoom_out")
-                                    {
-                                        gesturesManager.exitCounter = 0;
-                                        gesturesManager.doAction(gestureName);
-                                        Thread.Sleep(TimeSpan.FromSeconds(1));
+                                        ProcessManager processManager = new ProcessManager("KinectV2MouseControl");
+                                        processManager.checkProcess(true);
+                                        gesturesManager.setrecogtationGestureFlag(false);
+                                        System.Diagnostics.Debug.WriteLine("OFF gesty");
+                                        Thread.Sleep(TimeSpan.FromSeconds(2));
                                         gesturesManager.setGestureFlag("");
+                                        gesturesManager.exitCounter++;
                                     }
                                     else
                                     {
-                                        gesturesManager.exitCounter = 0;
-                                        gesturesManager.doAction(gestureName);
-                                        Thread.Sleep(TimeSpan.FromSeconds(0.1));
-                                        gesturesManager.setGestureFlag("");
+                                        ProcessManager processManagerGestures = new ProcessManager("GesturesRecognation");
+                                        processManagerGestures.checkProcess();
                                     }
-                                    
                                 }
+                                else if (gestureName == "next" || gestureName == "previous" || gestureName == "zoom_in" || gestureName == "zoom_out")
+                                {
+                                    gesturesManager.exitCounter = 0;
+                                    gesturesManager.doAction(gestureName);
+                                    Thread.Sleep(TimeSpan.FromSeconds(1));
+                                    gesturesManager.setGestureFlag("");
+                                }
+                                else
+                                {
+                                    gesturesManager.exitCounter = 0;
+                                    gesturesManager.doAction(gestureName);
+                                    Thread.Sleep(TimeSpan.FromSeconds(0.1));
+                                    gesturesManager.setGestureFlag("");
+                                }
+
                             }
+                        }
                     }
                 }
             }

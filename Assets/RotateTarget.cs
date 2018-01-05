@@ -68,11 +68,11 @@ public class RotateTarget : MonoBehaviour
 
         //Forward - scroll
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
-            moveCameraForward();
+            moveCameraForward(5);
 
         //Back - scroll
         if ((Input.GetAxis("Mouse ScrollWheel") < 0f))
-            moveCameraBack();
+            moveCameraBack(5);
 
         //Sprawdzenie czy środkowy przycisk myszy jest wciśniety
         /*
@@ -100,14 +100,14 @@ public class RotateTarget : MonoBehaviour
             transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
     }
 
-    void moveCameraForward()
+    public void moveCameraForward(int divider)
     {
-        transform.Translate(Vector3.forward / 10);
+        transform.Translate(Vector3.forward / divider);
     }
 
-    void moveCameraBack()
+    public void moveCameraBack(int divider)
     {
-        transform.Translate(Vector3.back / 10);
+        transform.Translate(Vector3.back / divider);
     }
 
     /*

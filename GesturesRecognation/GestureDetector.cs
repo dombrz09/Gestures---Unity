@@ -47,9 +47,9 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
             {
                 throw new ArgumentNullException("gestureResultView");
             }
-            
+
             this.GestureResultView = gestureResultView;
-            
+
             // create the vgb source. The associated body tracking ID will be set when a valid body frame arrives from the sensor.
             this.vgbFrameSource = new VisualGestureBuilderFrameSource(kinectSensor, 0);
             this.vgbFrameSource.TrackingIdLost += this.Source_TrackingIdLost;
@@ -185,7 +185,6 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
 
                                     if (result != null)
                                     {
-                                        //System.Diagnostics.Debug.WriteLine("result.Confidence= " + result.Confidence);
                                         // update the GestureResultView object with new gesture result values
                                         this.GestureResultView.UpdateGestureResult(true, result.Detected, result.Confidence, gesture.Name, this.gesturesManager);
                                     }

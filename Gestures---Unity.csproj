@@ -115,6 +115,7 @@
     <Compile Include="Assets\MeshObject.cs" />
     <Compile Include="Assets\MiscellaneousMethods.cs" />
     <Compile Include="Assets\ObjImporter.cs" />
+    <Compile Include="Assets\PDFController.cs" />
     <Compile Include="Assets\ReceiveActionController.cs" />
     <Compile Include="Assets\RotateTarget.cs" />
     <Compile Include="Assets\Scripts\ButtonTest.cs" />

@@ -21,7 +21,6 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
     using System.Windows.Controls;
     using Microsoft.Kinect;
     using Microsoft.Kinect.VisualGestureBuilder;
-    using System.Windows.Interop;
 
     /// <summary>
     /// Interaction logic for the MainWindow
@@ -61,8 +60,8 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
             this.kinectSensor.Open();
 
             // set the status text
-            //this.StatusText = this.kinectSensor.IsAvailable ? Properties.Resources.RunningStatusText
-            //                                                : Properties.Resources.NoSensorStatusText;
+            this.StatusText = this.kinectSensor.IsAvailable ? Properties.Resources.RunningStatusText
+                                                            : Properties.Resources.NoSensorStatusText;
 
             // open the reader for the body frames
             this.bodyFrameReader = this.kinectSensor.BodyFrameSource.OpenReader();
@@ -75,21 +74,21 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
 
             // initialize the gesture detection objects for our gestures
             this.gestureDetectorList = new List<GestureDetector>();
-            
-            //this.Visibility = Visibility.Hidden;
-            
+
+            System.IO.File.WriteAllText("startCurrentProgram.txt", "");
+
             // initialize the MainWindow
             this.InitializeComponent();
 
             // set our data context objects for display in UI
-            //this.DataContext = this;
-            //this.kinectBodyViewbox.DataContext = this.kinectBodyView;
+            this.DataContext = this;
+            this.kinectBodyViewbox.DataContext = this.kinectBodyView;
 
             // create a gesture detector for each body (6 bodies => 6 detectors) and create content controls to display results in the UI
             int col0Row = 0;
             int col1Row = 0;
             int maxBodies = this.kinectSensor.BodyFrameSource.BodyCount;
-            for (int i = 0; i < 1; ++i)
+            for (int i = 0; i < maxBodies; ++i)
             {
                 GestureResultView result = new GestureResultView(i, false, false, 0.0f);
                 GestureDetector detector = new GestureDetector(this.kinectSensor, result);
@@ -114,7 +113,7 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
                     ++col1Row;
                 }
 
-                //this.contentGrid.Children.Add(contentControl);
+                this.contentGrid.Children.Add(contentControl);
             }
         }
 
@@ -191,8 +190,8 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
         private void Sensor_IsAvailableChanged(object sender, IsAvailableChangedEventArgs e)
         {
             // on failure, set the status text
-            //this.StatusText = this.kinectSensor.IsAvailable ? Properties.Resources.RunningStatusText
-             //                                               : Properties.Resources.SensorNotAvailableStatusText;
+            this.StatusText = this.kinectSensor.IsAvailable ? Properties.Resources.RunningStatusText
+                                                            : Properties.Resources.SensorNotAvailableStatusText;
         }
 
         /// <summary>
@@ -200,8 +199,6 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
         /// </summary>
         /// <param name="sender">object sending the event</param>
         /// <param name="e">event arguments</param>
-        /// 
-
         private void Reader_BodyFrameArrived(object sender, BodyFrameArrivedEventArgs e)
         {
             bool dataReceived = false;
@@ -234,7 +231,7 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
                 {
                     // loop through all bodies to see if any of the gesture detectors need to be updated
                     int maxBodies = this.kinectSensor.BodyFrameSource.BodyCount;
-                    for (int i = 0; i < 1; ++i)
+                    for (int i = 0; i < maxBodies; ++i)
                     {
                         Body body = this.bodies[i];
                         ulong trackingId = body.TrackingId;

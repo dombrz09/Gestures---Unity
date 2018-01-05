@@ -13,14 +13,15 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
         private bool recogtationGestureFlag = false;
         private bool activeFlagAd = false;
         private bool activeFlagPp = false;
-        private bool activeFlagGc = false;
+        private bool activeFlagGs = false;
         private bool activeFlagGt = false;
         private bool startActionFlagAd = false;
         private bool startActionFlagPp = false;
-        private bool startActionFlagGc = false;
+        private bool startActionFlagGs = false;
         private bool startActionFlagGt = false;
         private int currentZoom = 0;
         public int exitCounter = 0;
+        public int isPointerSet = 0;
         public ProgramsController program = new ProgramsController();
 
         public void setGestureFlag(string gesture)
@@ -83,14 +84,14 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
             return this.startActionFlagPp;
         }
 
-        public void setStartActionFlagGc(bool var)
+        public void setStartActionFlagGs(bool var)
         {
-            this.startActionFlagGc = var;
+            this.startActionFlagGs = var;
         }
 
-        public bool getStartActionFlagGc()
+        public bool getStartActionFlagGs()
         {
-            return this.startActionFlagGc;
+            return this.startActionFlagGs;
         }
 
         public void setStartActionFlagGt(bool var)
@@ -103,14 +104,14 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
             return this.startActionFlagGt;
         }
 
-        public void setActiveFlagGc(bool var)
+        public void setActiveFlagGs(bool var)
         {
-            this.activeFlagGc = var;
+            this.activeFlagGs = var;
         }
 
-        public bool getActiveFlagGc()
+        public bool getActiveFlagGs()
         {
-            return this.activeFlagGc;
+            return this.activeFlagGs;
         }
 
         public void setActiveFlagGt(bool var)
@@ -125,9 +126,13 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
 
         public void setPointerMouse()
         {
-            if (program.getCurrentProgram() == "Gc")
+            if (program.getCurrentProgram() == "Gs")
             {
-                program.pointer_Mouse(this, null);
+                if(this.isPointerSet == 0 && program.yesPointerProgram == 1)
+                {
+                    program.pointer_Mouse(this, null);
+                    this.isPointerSet = 1;
+                }
             }
         }
 
@@ -135,7 +140,6 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
         {
             if (gesture == "start")
             {
-                System.Diagnostics.Debug.WriteLine("program.getCurrentProgram() " + program.getCurrentProgram());
                 if ((getActiveFlagAd() == false) && (program.getCurrentProgram() == "Ad"))
                 {
                     if (getStartActionFlagAd() == false)
@@ -154,14 +158,14 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
                     }
                     setActiveFlagPp(true);
                 }
-                else if ((getActiveFlagGc() == false) && (program.getCurrentProgram() == "Gc"))
+                else if ((getActiveFlagGs() == false) && (program.getCurrentProgram() == "Gs"))
                 {
-                    if (getStartActionFlagGc() == false)
+                    if (getStartActionFlagGs() == false)
                     {
                         program.start_Click(this, null);
-                        setStartActionFlagGc(true);
+                        setStartActionFlagGs(true);
                     }
-                    setActiveFlagGc(true);
+                    setActiveFlagGs(true);
                 }
                 else if ((getActiveFlagGt() == false) && (program.getCurrentProgram() == "Gt"))
                 {
