@@ -21,4 +21,9 @@ public class PDFController : MonoBehaviour {
     {
         return isOpenPDF.text;
     }
+
+    public void setIsOpenPDF(string val)
+    {
+        isOpenPDF.text = val;
+    }
 }

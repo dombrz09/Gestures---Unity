@@ -55,7 +55,7 @@ public class ChangeImages : MonoBehaviour
         this.img = imgLink.texture;
         this.image = gameObject.GetComponent<RawImage>();
         if(first==true)
-        GetComponent<RectTransform>().sizeDelta = new Vector2(100, 100);
+        GetComponent<RectTransform>().sizeDelta = new Vector2(100, 50);
         this.image.texture = this.img;
     }
 
@@ -134,7 +134,7 @@ public class ChangeImages : MonoBehaviour
         if (first == false)
             zoom = zoom + 40;
 
-        GetComponent<RectTransform>().sizeDelta = new Vector2(zoom, zoom);
+        GetComponent<RectTransform>().sizeDelta = new Vector2(zoom-50, zoom);
         first = false;
 
     }
@@ -146,7 +146,7 @@ public class ChangeImages : MonoBehaviour
         else
             zoom = zoom - 40;
 
-        GetComponent<RectTransform>().sizeDelta = new Vector2(zoom, zoom);
+        GetComponent<RectTransform>().sizeDelta = new Vector2(zoom-50, zoom);
         first = false;
 
     }

@@ -15,6 +15,7 @@ public class ReceiveActionController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.PageUp))
         {
+            print("pDFController.getIsOpenPDF() = " + pDFController.getIsOpenPDF());
             if(pDFController.getIsOpenPDF() == "1")
             {
                 changeImages.zoomIn();
