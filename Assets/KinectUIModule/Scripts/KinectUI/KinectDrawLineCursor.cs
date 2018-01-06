@@ -66,7 +66,7 @@ public class KinectDrawLineCursor : AbstractKinectUICursor
             end.transform.localScale = new Vector3(scale, scale, scale);
             
             //Przygotowanie do rysowania 3D
-            Plane objPlane = new Plane(Camera.main.transform.forward, this.transform.position);
+            Plane objPlane = new Plane(new Vector3(Camera.main.transform.forward.x, Camera.main.transform.forward.y, Camera.main.transform.forward.z), new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z*100));
             Ray mRay = Camera.main.ScreenPointToRay(_data.GetHandScreenPosition());
             float rayDistance;
             if (objPlane.Raycast(mRay, out rayDistance))
@@ -74,7 +74,7 @@ public class KinectDrawLineCursor : AbstractKinectUICursor
              //Zmiana koloru wraz ze sprawdzeniem by nie wychodzić po za zakres tablicy
             if (juststarted)
             {
-                mousePos_e = mRay.GetPoint(rayDistance);
+                mousePos_e = mRay.GetPoint(rayDistance*0.0015f);
 
                 if (index < line_color.Length - 1 )
                     index++;
@@ -94,7 +94,7 @@ public class KinectDrawLineCursor : AbstractKinectUICursor
 
             //Pobieramy pozycję myszki
             mousePos_s = mousePos_e;
-            mousePos_e = mRay.GetPoint(rayDistance);
+            mousePos_e = mRay.GetPoint(rayDistance*0.0015f);
 
             //Ustalamy pozycję dla kulek
             begin.transform.position = mousePos_s;
