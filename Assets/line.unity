@@ -583,7 +583,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1147134301}
+      - m_Target: {fileID: 0}
         m_MethodName: previousImage
         m_Mode: 1
         m_Arguments:
@@ -5728,7 +5728,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 538006404}
+      - m_Target: {fileID: 0}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -7428,7 +7428,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1147134301}
+      - m_Target: {fileID: 0}
         m_MethodName: lastImage
         m_Mode: 1
         m_Arguments:
@@ -10599,7 +10599,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1147134301}
+      - m_Target: {fileID: 0}
         m_MethodName: nextImage
         m_Mode: 1
         m_Arguments:
@@ -13618,7 +13618,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1147134301}
+      - m_Target: {fileID: 0}
         m_MethodName: firstImage
         m_Mode: 1
         m_Arguments:
@@ -14317,7 +14317,7 @@ Prefab:
     - target: {fileID: 224741474992073506, guid: 0fa72111896edab4aa2171a92c85c319,
         type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0fa72111896edab4aa2171a92c85c319, type: 2}
