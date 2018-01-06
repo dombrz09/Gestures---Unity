@@ -32,7 +32,8 @@ public class ChangeImages : MonoBehaviour
     public Button zoomInB;
     public Button zoomOutB;
 
-    private int zoom=140;
+    private float zoom_x = 0f;
+    private float zoom_y = 0f;
     private bool first = true;
 
     private void Start()
@@ -55,7 +56,11 @@ public class ChangeImages : MonoBehaviour
         this.img = imgLink.texture;
         this.image = gameObject.GetComponent<RawImage>();
         if(first==true)
-        GetComponent<RectTransform>().sizeDelta = new Vector2(100, 50);
+        // GetComponent<RectTransform>().sizeDelta = new Vector2(100, 100);
+        {
+            zoom_x = gameObject.GetComponent<RectTransform>().sizeDelta.x;
+            zoom_y = gameObject.GetComponent<RectTransform>().sizeDelta.y;
+        }
         this.image.texture = this.img;
     }
 
@@ -131,23 +136,20 @@ public class ChangeImages : MonoBehaviour
 
     public void zoomIn()
     {
-        if (first == false)
-            zoom = zoom + 40;
-
-        GetComponent<RectTransform>().sizeDelta = new Vector2(zoom-50, zoom);
+        zoom_x = zoom_x + 40;
+        zoom_y = zoom_y + 40;
         first = false;
+        GetComponent<RectTransform>().sizeDelta = new Vector2(zoom_x, zoom_y);
 
     }
 
     public void zoomOut()
     {
-        if (first == true)
-            zoom = zoom - 140;
-        else
-            zoom = zoom - 40;
 
-        GetComponent<RectTransform>().sizeDelta = new Vector2(zoom-50, zoom);
+        zoom_x = zoom_x - 40;
+        zoom_y = zoom_y - 40;
         first = false;
+        GetComponent<RectTransform>().sizeDelta = new Vector2(zoom_x, zoom_y);
 
     }
 }
