@@ -14,6 +14,11 @@
 //Date:         2017-11-19
 //Description:  Przystosowanie klasy do pracy z kinectem w przestrzeni 3D
 /////////////////////////////////////////////////
+//                  CHANGE                      
+//Author:       Dawid Sklorz
+//Date:         2018-01-07
+//Description:  Zmiana przestrzeni rysowania kinectem w 3D
+/////////////////////////////////////////////////
 
 using UnityEngine;
 
@@ -22,7 +27,7 @@ public class KinectDrawLineCursor : AbstractKinectUICursor
     [SerializeField]
     //Siatka cylindra
     public Transform cylinderPrefab;
-    
+
     //Środek kul
     private GameObject begin = null;
     private GameObject end = null;
@@ -47,8 +52,8 @@ public class KinectDrawLineCursor : AbstractKinectUICursor
     private Vector3 _initScale;
 
     private bool juststarted = true;
-    
-        public override void Start()
+
+    public override void Start()
     {
         base.Start();
         _initScale = transform.localScale;
@@ -57,54 +62,54 @@ public class KinectDrawLineCursor : AbstractKinectUICursor
 
     private void DrawUpdate()
     {
-            //Inicjalizuje dwie kulki pomiędzy, którymi będzie potem rysowany walec
-            begin = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            end = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        //Inicjalizuje dwie kulki pomiędzy, którymi będzie potem rysowany walec
+        begin = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        end = GameObject.CreatePrimitive(PrimitiveType.Sphere);
 
-            //Ustawienie skali
-            begin.transform.localScale = new Vector3(scale, scale, scale);
-            end.transform.localScale = new Vector3(scale, scale, scale);
-            
-            //Przygotowanie do rysowania 3D
-            Plane objPlane = new Plane(new Vector3(Camera.main.transform.forward.x, Camera.main.transform.forward.y, Camera.main.transform.forward.z), new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z*100));
-            Ray mRay = Camera.main.ScreenPointToRay(_data.GetHandScreenPosition());
-            float rayDistance;
-            if (objPlane.Raycast(mRay, out rayDistance))
+        //Ustawienie skali
+        begin.transform.localScale = new Vector3(scale, scale, scale);
+        end.transform.localScale = new Vector3(scale, scale, scale);
 
-             //Zmiana koloru wraz ze sprawdzeniem by nie wychodzić po za zakres tablicy
+        //Przygotowanie do rysowania 3D
+        Plane objPlane = new Plane(new Vector3(Camera.main.transform.forward.x, Camera.main.transform.forward.y, Camera.main.transform.forward.z), new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z * 100));
+        Ray mRay = Camera.main.ScreenPointToRay(_data.GetHandScreenPosition());
+        float rayDistance;
+        if (objPlane.Raycast(mRay, out rayDistance))
+
+            //Zmiana koloru wraz ze sprawdzeniem by nie wychodzić po za zakres tablicy
             if (juststarted)
             {
-                mousePos_e = mRay.GetPoint(rayDistance*0.0015f);
+                mousePos_e = mRay.GetPoint(rayDistance * 0.0040f);
 
-                if (index < line_color.Length - 1 )
+                if (index < line_color.Length - 1)
                     index++;
                 else
                     index = 0;
             }
-            juststarted = false;
-            //Ustawienie koloru
-            MeshRenderer beginRenderer = begin.GetComponent<MeshRenderer>();
-            MeshRenderer endRenderer = end.GetComponent<MeshRenderer>();
+        juststarted = false;
+        //Ustawienie koloru
+        MeshRenderer beginRenderer = begin.GetComponent<MeshRenderer>();
+        MeshRenderer endRenderer = end.GetComponent<MeshRenderer>();
 
-            beginRenderer.material = line_color[index];
-            endRenderer.material = line_color[index];
+        beginRenderer.material = line_color[index];
+        endRenderer.material = line_color[index];
 
-            beginRenderer.sharedMaterial = line_color[index];
-            endRenderer.sharedMaterial = line_color[index];
+        beginRenderer.sharedMaterial = line_color[index];
+        endRenderer.sharedMaterial = line_color[index];
 
-            //Pobieramy pozycję myszki
-            mousePos_s = mousePos_e;
-            mousePos_e = mRay.GetPoint(rayDistance*0.0015f);
+        //Pobieramy pozycję myszki
+        mousePos_s = mousePos_e;
+        mousePos_e = mRay.GetPoint(rayDistance * 0.0040f);
 
-            //Ustalamy pozycję dla kulek
-            begin.transform.position = mousePos_s;
-            end.transform.position = mousePos_e;
+        //Ustalamy pozycję dla kulek
+        begin.transform.position = mousePos_s;
+        end.transform.position = mousePos_e;
 
-            //Wywołujemy procedurę, która obliczy nam pozycję cylindra
-            InstantiateCylinder(cylinderPrefab, begin.transform.position, end.transform.position);
+        //Wywołujemy procedurę, która obliczy nam pozycję cylindra
+        InstantiateCylinder(cylinderPrefab, begin.transform.position, end.transform.position);
 
-            //Wywołujemy procedurę, która obliczy nam pozycję cylindra (odświeża)
-            UpdateCylinderPosition(cylinder, begin.transform.position, end.transform.position, line_color[index]);
+        //Wywołujemy procedurę, która obliczy nam pozycję cylindra (odświeża)
+        UpdateCylinderPosition(cylinder, begin.transform.position, end.transform.position, line_color[index]);
         if (_data.CurrentHandState.Equals(Windows.Kinect.HandState.Open))
             juststarted = true;
     }
@@ -113,7 +118,7 @@ public class KinectDrawLineCursor : AbstractKinectUICursor
     {
         //Inicjalizujemy obiekt cylinder
         cylinder = Instantiate<GameObject>(cylinderPrefab.gameObject, Vector3.zero, Quaternion.identity);
-   
+
     }
 
     private void UpdateCylinderPosition(GameObject cylinder, Vector3 beginPoint, Vector3 endPoint, Material material)
