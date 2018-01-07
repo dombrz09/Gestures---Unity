@@ -19,6 +19,9 @@ public class GestureRecognationInitializer : MonoBehaviour
     public void KillProcess()
     {
         Process[] processes = Process.GetProcessesByName("DiscreteGestureBasics-WPF");
-        processes[0].Kill();
+        if(processes.Length > 0)
+        {
+            processes[0].Kill();
+        }
     }
 }

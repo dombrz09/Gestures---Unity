@@ -28,6 +28,9 @@ public class KinectToMouseProcesInitializer : MonoBehaviour {
     public void KillProcess()
     {
         Process[] processes = Process.GetProcessesByName("KinectV2MouseControl");
-        processes[0].Kill();
+        if (processes.Length > 0)
+        {
+            processes[0].Kill();
+        }
     }
 }

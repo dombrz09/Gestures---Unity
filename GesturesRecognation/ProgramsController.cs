@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Author: Dawid Sklorz
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -80,6 +81,9 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
         {
             if (getStartCurrentProgram() != currentProgram)
             {
+                System.Diagnostics.Debug.WriteLine("test getStartCurrentProgram() = " + getStartCurrentProgram());
+                System.Diagnostics.Debug.WriteLine("test currentProgram = " + currentProgram);
+
                 sendKey("{F5}", "^{h}", "^{F5}", "");
                 setStartCurrentProgram(currentProgram);
             }

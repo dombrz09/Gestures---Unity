@@ -1,4 +1,5 @@
-﻿//------------------------------------------------------------------------------
+﻿//Author: Dawid Sklorz
+//------------------------------------------------------------------------------
 // <copyright file="GestureResultView.cs" company="Microsoft">
 //     Copyright (c) Microsoft Corporation.  All rights reserved.
 // </copyright>
@@ -230,7 +231,7 @@ namespace Microsoft.Samples.Kinect.DiscreteGestureBasics
                                 if (gesturesManager.getrecogtationGestureFlag())
                                 {
                                     gesturesManager.setrecogtationGestureFlag(false);
-                                    if(programsController.getCurrentProgram() != "Gt")
+                                    if (programsController.getCurrentProgram() != "Gt")
                                     {
                                         ProcessManager processManager = new ProcessManager("KinectV2MouseControl");
                                         processManager.checkProcess();

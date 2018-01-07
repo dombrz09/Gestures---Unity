@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿///////////////////////////////////////////////
+//Author: Dawid Sklorz
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
