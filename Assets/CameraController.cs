@@ -12,15 +12,15 @@ public class CameraController : MonoBehaviour
     #region Private Methods
     private void Rotate(float xMovement, float yMovement)
     {
-        _xRotation += xMovement;
-        _yYRotation += yMovement;
+        _xRotation += xMovement/1000;
+        _yYRotation += yMovement/1000;
     }
     #endregion
 
     #region Unity CallBacks
     void Start()
     {
-        InputManager.MouseMoved += Rotate;
+        InputManager.MouseMoved2 += Rotate;
     }
 
     void Update()
@@ -32,7 +32,7 @@ public class CameraController : MonoBehaviour
 
     void OnDestroy()
     {
-        InputManager.MouseMoved -= Rotate;
+        InputManager.MouseMoved2 -= Rotate;
     }
     #endregion
 }
