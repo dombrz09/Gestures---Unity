@@ -31,6 +31,7 @@ public class ChangeImages : MonoBehaviour
     public Button HidePDF;
     public Button zoomInB;
     public Button zoomOutB;
+    public Button ClosePDF;
 
     private float zoom_x = 0f;
     private float zoom_y = 0f;
@@ -39,14 +40,11 @@ public class ChangeImages : MonoBehaviour
     private void Start()
     {
         this.actionFlag.text = "true";
-        //Pokazanie obiektów
-        NextButton.gameObject.SetActive(true);
-        PrevButton.gameObject.SetActive(true);
-        FirstButton.gameObject.SetActive(true);
-        LastButton.gameObject.SetActive(true);
-        HidePDF.gameObject.SetActive(true);
-        zoomInB.gameObject.SetActive(true);
-        zoomOutB.gameObject.SetActive(true);
+    }
+
+    public void setactionFlag(string val)
+    {
+        this.actionFlag.text = val;
     }
 
     //Wstawienie obrazu jpg jako teksture do objektu
@@ -79,8 +77,16 @@ public class ChangeImages : MonoBehaviour
             int currentImg = this.getCurrentImage(this.currentImg.text);
 
             this.getImage(currentImg - 1);
-            
-            
+
+            //Pokazanie obiektów
+            NextButton.gameObject.SetActive(true);
+            PrevButton.gameObject.SetActive(true);
+            FirstButton.gameObject.SetActive(true);
+            LastButton.gameObject.SetActive(true);
+            HidePDF.gameObject.SetActive(true);
+            zoomInB.gameObject.SetActive(true);
+            zoomOutB.gameObject.SetActive(true);
+            ClosePDF.gameObject.SetActive(true);
         }
     }
 
