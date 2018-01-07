@@ -19,6 +19,7 @@ a29102380be6cb49bc43d73159c08e00 Assembly-CSharp.dll:.KinectUICursor
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.FollowMouse
 47ac1a9da19c6e739c2c44277e63a616 Assembly-CSharp.dll:.KinectDrawLineCursor
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GestureRecognationInitializer
+19d4f45e472ae6eb33659eb9d16f3931 Assembly-CSharp.dll:.ReceiveActionController
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 49cd62a578efc0a599b810a2b66cd49c UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -124,7 +125,8 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.KinectToMouseProcesInitializer
 ac759bd962254cd9f6d1d06b655434c4 Assembly-CSharp.dll:.DrawLine
 7d6fbb4c22d78e12c1b19772a43401dc Assembly-CSharp.dll:.AnimationScript
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.InputManager
+83678543d66de26c9af19b61eae7e5c1 Assembly-CSharp.dll:.CameraControllerMouse
+9ffe03b4d1f05ee256743c962b3e582d Assembly-CSharp.dll:.InputManager
 ba9d967cd3b969e4ab80a34f4ff89675 Assembly-CSharp.dll:.DrawLine2
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -146,6 +148,7 @@ af4564aef1685f39f112b090f1b0cbd4 Assembly-CSharp.dll:.LoadFile
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 5f2ad81aa8994e8fbe25d1e57afe6773 UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
+59a3f74fecf6f3010b8557d278278959 Assembly-CSharp.dll:.InputManagerMouse
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ColorSourceManager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:Helper.EventPump
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
@@ -154,6 +157,7 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
 6cf1f3293c43df9d20eae5d753d50ac1 Assembly-CSharp.dll:.DepthSourceView
+83d1066b7d3b0353a747be5d64c8e57b Assembly-CSharp.dll:.PDFController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.KinectUIWaitOverButton
 8daec05b5d80d8544f74f366e3b93adc Assembly-CSharp.dll:.MeshObject
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ChangeScene
@@ -165,5 +169,3 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 760d61dcd067c1148397c7cadd4f2e33 Assembly-CSharp.dll:.InfraredSourceView
 bb43737448a742fc6645cab9c845dcf7 Assembly-CSharp.dll:.Load3dObject
 54aeed38d1bd5850ccbdf38847a44ed9 Assembly-CSharp.dll:.ChangeImages
-19d4f45e472ae6eb33659eb9d16f3931 Assembly-CSharp.dll:.ReceiveActionController
-83d1066b7d3b0353a747be5d64c8e57b Assembly-CSharp.dll:.PDFController
